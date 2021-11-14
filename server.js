@@ -9,9 +9,10 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const mysql = require('mysql2/promise');
-const sequelize = require('./utils/database')
-
+const csrf = require('csurf');
 const path = require('path');
+
+const sequelize = require('./utils/database')
 
 const app = express();
 

@@ -1,5 +1,6 @@
 module.exports = {
     BASE_URL: process.env.BASE_URL,
-    MAILJET_CONNECT_API_1: process.env.MAILJET_CONNECT_API_1,
-    MAILJET_CONNECT_API_2: process.env.MAILJET_CONNECT_API_2
+    DATABASE_USER: process.env.DATABASE_USER,
+    DATABASE_PASS: process.env.DATABASE_PASS,
+    DATABASE_NAME: process.env.DATABASE_NAME
 }

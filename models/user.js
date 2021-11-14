@@ -19,6 +19,9 @@ const user = sequelize.define('User', {
     password: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    resetToken: {
+        type: Sequelize.STRING
     }
 })
 

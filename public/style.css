@@ -4,4 +4,5 @@
 @import url('bootstrap/css/bootstrap.min.css');
 @import url('styles/navbar.css');
 @import url('styles/footer.css');
+@import url('styles/auth.css');
 @import url('styles/media.css');

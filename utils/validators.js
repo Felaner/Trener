@@ -4,27 +4,27 @@ const bcrypt = require('bcryptjs');
 
 exports.registerValidators = [
     body('email')
-        .isEmail().withMessage('Invalid email')
+        .isEmail().withMessage('Некорректный email')
         .custom(async (value, {req}) => {
             const user = await User.findOne({ where: {email: value} });
             if (user) {
-                return Promise.reject('Email already exists');
+                return Promise.reject('Email уже используется');
             }
         }),
     body('password')
-        .isLength({min: 6, max: 56}).withMessage('min lenght password: 6')
+        .isLength({min: 6, max: 56}).withMessage('Минимальная длина пароля: 6 символов')
         .isAlphanumeric()
         .trim(),
     body('confirm')
         .custom((value, {req}) => {
             if (value !== req.body.password) {
-                throw new Error('Password mismatch');
+                throw new Error('Пароли не совпадают');
             }
             return true;
         })
         .trim(),
     body('name')
-        .isLength({min: 2}).withMessage('min lenght: 2')
+        .isLength({min: 2}).withMessage('Минимальная длина имени: 2 символа')
         .trim()
 ]
 exports.loginValidators = [
@@ -32,7 +32,7 @@ exports.loginValidators = [
         .custom(async (value, {req}) => {
             const candidate = await User.findOne({ where: {email: value} });
             if (!candidate) {
-                return Promise.reject('Invalid email or password');
+                return Promise.reject('Неверный email или пароль');
             }
         }),
     body('password')
@@ -41,7 +41,7 @@ exports.loginValidators = [
             const candidate = await User.findOne({ where: {email} })
             const areSame = await bcrypt.compare(value, candidate.password);
             if (!areSame) {
-                throw new Error('Invalid email or password');
+                throw new Error('Неверный email или пароль');
             }
         })
 ]

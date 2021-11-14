@@ -1,0 +1,17 @@
+nav.navbar {
+    background-color: #000000;
+}
+
+nav .nav-link {
+    transition: 0.5s;
+    border-radius: 32px;
+    box-sizing: border-box;
+    font-size: 28px;
+    line-height: 120%;
+    color: #ffffff;
+}
+
+nav .nav-link:hover {
+    background: #0653B6;
+    box-shadow: 0 2px 8px 5px rgba(6, 83, 182, 0.38);
+}

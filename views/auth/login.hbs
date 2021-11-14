@@ -1,0 +1,74 @@
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Вход</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Регистрация</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+            {{#if loginError}}
+                <div class="alert alert-danger">{{loginError}}</div>
+            {{/if}}
+
+            <h1>Войти</h1>
+            <form action="/auth/login" method="POST">
+                <div class="input-field">
+                    <input id="email" name="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="Введите email"></span>
+                </div>
+
+                <div class="input-field">
+                    <input id="password" name="password" type="password" class="validate" required>
+                    <label for="password">Пароль</label>
+                    <span class="helper-text" data-error="Введите пароль"></span>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+
+                <p><a href="/auth/reset">Забыли пароль?</a></p>
+
+                <button class="btn btn-primary" type="submit">Войти</button>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+            {{#if registerError}}
+                <p class="alert">{{registerError}}</p>
+            {{/if}}
+
+            <h1>Создать аккаунт</h1>
+            <form action="/auth/register" method="POST" novalidate>
+                <div class="input-field">
+                    <input id="remail" name="email" type="email" class="validate" required>
+                    <label for="remail">Email</label>
+                    <span class="helper-text" data-error="Введите email"></span>
+                </div>
+
+                <div class="input-field">
+                    <input id="rpassword" name="password" type="password" class="validate" required>
+                    <label for="rpassword">Пароль</label>
+                    <span class="helper-text" data-error="Введите пароль"></span>
+                </div>
+
+                <div class="input-field">
+                    <input id="confirm" name="confirm" type="password" class="validate" required>
+                    <label for="confirm">Пароль еще раз</label>
+                    <span class="helper-text" data-error="Введите пароль"></span>
+                </div>
+
+                <div class="input-field">
+                    <input id="name" name="name" type="text" class="validate" required>
+                    <label for="name">Ваше имя</label>
+                    <span class="helper-text" data-error="Введите имя"></span>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+
+                <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>

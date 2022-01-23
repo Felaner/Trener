@@ -5,6 +5,10 @@
     border-radius: 2px;
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9,55,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 .box {
     width: 400px;
     height: 600px;
@@ -17,6 +21,13 @@
     height: 600px;
     border-radius: 25px;
     background-color: #009900;
+}
+
+.box-text-main{
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .box-text{
@@ -66,8 +77,17 @@
     border-radius: 2px;
 }
 
+#carousel2 .carousel-item{
+    height: 750px;
+}
+
 #carousel2 > .carousel-control-next, #carousel2 > .carousel-control-prev {
-    width: 7%;
+    width: 9%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 60px;
+    height: 60px;
 }
 
 #carousel2 .box-images {
@@ -109,39 +129,170 @@
     border-radius: 25px;
 }
 
-.card{
-    width: 400px;
-    height: 550px;
+.contacts{
     background: #000000;
-    border-radius: 25px;
-    padding: 40px;
 }
 
-.card-price-divider{
-    width: 60%;
-    height: 5px;
-    background: #0653B6;
+.contacts-phone a{
+    color: #ffffff;
+    text-decoration: none;
 }
 
-sup{
-    color: #F4BF00;
+.contacts-mail a{
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.card-advantage span{
-    color: #009900;
+.contacts-inst a{
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.card-advantage-divider{
-    background: #C0C0C0;
-    width: 100%;
+footer{
+    background: #000000;
+}
+
+/*Мобильная версия*/
+
+.mobile-carousel-caption{
+    z-index: 5;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+}
+.mobile-carousel-caption h5{
+    font-weight: bold;
+    width: 120px;
+}
+.mobile-carousel-caption p{
+    font-weight: bold;
+    width: 200px;
+}
+.mobile-carousel-item{
+    height: 460px;
+}
+.slider-img{
+    object-fit: cover;
+}
+.mobile-divider{
+    width: 80%;
     height: 2px;
+    background: #ffffff;
     border-radius: 2px;
 }
-
-.contacts-galery {
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(225deg, #CA38A7 0%, #FFD554 100%);
-    padding: 2px;
+.mobile-box{
+    width: 100%;
+    height: 100%;
 }
-
+.mobile-box img{
+    object-fit: cover;
+}
+.mobile-button{
+    width: 150px;
+    height: 35px;
+    background: #0653B6;
+    box-shadow: 0px 4px 10px 2px rgba(6, 83, 182, 0.6);
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    color: #ffffff;
+}
+.mobile-reason-box{
+    flex: 0 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    color: #000000;
+    background: #ffffff;
+}
+.mobile-reason-box .icon{
+    width: 50px;
+    height: 50px;
+}
+.horizontal-scroll{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.mobile-box-img img{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-top: 10px solid #0653B6;
+    border-top-left-radius: 6%;
+    border-top-right-radius: 6%;
+}
+.mobile-box-title{
+    width: 140px;
+    height: 30px;
+    background: #0653B6;
+    border-radius: 20px;
+}
+.mobile-box-img-green img{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-top: 10px solid #009900;
+    border-top-left-radius: 6%;
+    border-top-right-radius: 6%;
+}
+.mobile-box-title-green{
+    width: 140px;
+    height: 30px;
+    background: #009900;
+    border-radius: 20px;
+}
+.mobile-box-title-green:active{
+    opacity: 0;
+}
+.mobile-box-before{
+    width: 200px;
+    height: 300px;
+    z-index: 50;
+}
+.blue-wrapper{
+    width: 190px;
+    height: 280px;
+    background: #0653B6;
+    border-radius: 25px;
+}
+.blue-wrapper img{
+    position: relative;
+    top: 16px;
+    left: 16px;
+    border-radius: 25px;
+}
+.mobile-box-after{
+    width: 200px;
+    height: 300px;
+    position: relative;
+    left: -46%;
+    top: 6%;
+    z-index: 40;
+}
+.green-wrapper{
+    width: 190px;
+    height: 280px;
+    background: #009900;
+    border-radius: 25px;
+}
+.green-wrapper img{
+    position: relative;
+    top: -16px;
+    left: -16px;
+    border-radius: 25px;
+}
+.animation{
+    animation: shuffle 2s;
+}
+@keyframes shuffle {
+    0% {
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(80%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}

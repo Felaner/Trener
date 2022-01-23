@@ -1,15 +1,16 @@
 <!--Навбар-->
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container pb-3 pt-3">
+<nav class="navbar navbar-dark navbar-expand-lg d-sm-flex justify-content-center d-none">
+    <div class="pb-3 pt-3">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav d-flex justify-content-between">
                     <a class="nav-link mr-2" href="/">Главная</a>
-                    <a class="nav-link mr-2" href="#">Обо мне</a>
-                    <a class="nav-link mr-2" href="#">Блог</a>
+                    <a class="nav-link mr-2" href="#">Кто я?</a>
+                    <a class="nav-link mr-2" href="#">Результаты клиентов</a>
+                    <a class="nav-link mr-2" href="#">Присоединиться</a>
                     {{#unless isAuth}}
                         <a class="nav-link" href="/auth/login#login">Авторизация</a>
                     {{/unless}}
@@ -19,5 +20,53 @@
                     {{/if}}
                 </div>
             </div>
+    </div>
+</nav>
+
+<nav class="mobile-nav d-sm-none d-flex mt-3">
+    <div class="container-fluid mobile-nav-wrapper">
+        <div class="mobile-nav-buttons d-flex justify-content-between">
+            <button class="navbar-toggler mobile-navbar-toggler d-flex flex-column justify-content-around" type="button" data-toggle="collapse" data-target="#mobileNavbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
+                <span class="mobile-hamburger-top"></span>
+                <span class="mobile-hamburger-bottom"></span>
+            </button>
+            <a href="#">
+                <img class="main-profile-link" src="images/icons/personcircle.svg" alt="">
+            </a>
+        </div>
+        <div class="collapse mobile-navbar-collapse justify-content-center" id="mobileNavbarNavAltMarkup">
+            <div class="mobile-navbar-profile d-flex justify-content-center">
+                <a class="d-flex flex-column justify-content-around" href="#">
+                    <img class="mobile-navbar-profile-icon" src="images/icons/personcircle.svg" alt="">
+                    <div class="mobile-navbar-profile-title">Личный кабинет</div>
+                </a>
+            </div>
+            <div class="mobile-navbar-nav d-flex flex-column justify-content-around">
+                <a class="mobile-nav-link d-flex align-items-center" href="/">Главная</a>
+                <a class="mobile-nav-link d-flex align-items-center" href="#">Кто я?</a>
+                <a class="mobile-nav-link d-flex align-items-center" href="#">Результаты клиентов</a>
+                <a class="mobile-nav-link d-flex align-items-center" href="#">Присоединиться</a>
+                {{#unless isAuth}}
+                    <a class="mobile-nav-link d-flex align-items-center" href="/auth/login#login">Авторизация</a>
+                {{/unless}}
+                {{#if isAuth}}
+                    <a class="mobile-nav-link d-flex align-items-center" href="/profile">Личный кабинет</a>
+                    <a class="mobile-nav-link d-flex align-items-center" href="/auth/logout">Выйти</a>
+                {{/if}}
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="mobile-navbar-social">
+                    <a class="nav-inst-link" href="">
+                        <img class="w-100 h-100" src="images/icons/nav-inst.svg" alt="">
+                    </a>
+                    <a class="nav-inst-link" href="">
+                        <img class="w-100 h-100" src="images/icons/nav-mail.svg" alt="">
+                    </a>
+                    <a class="nav-inst-link" href="">
+                        <img class="w-100 h-100" src="images/icons/nav-whatsup.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>

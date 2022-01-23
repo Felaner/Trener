@@ -1,10 +1,79 @@
 @media (max-width: 1199px) {
+    .f-32{
+        font-size: 30px;
+    }
+    .contacts-inst{
+        font-size: 28px;
+    }
+    .contacts-galery{
+        width: 235px;
+        height: 235px;
+    }
 
+}
+
+@media (max-width: 991px) {
+    .reason-box{
+        width: 350px;
+    }
+    .box-text{
+        height: 385px;
+    }
+    .f-32{
+        font-size: 26px;
+    }
+    .about-title{
+        width: 60%;
+    }
+    .about-title-green{
+        width: 60%;
+    }
 }
 
 @media (max-width: 767px) {
     .f-26 {
         font-size: 20px;
+    }
+    .navbar{
+        background: #000000;
+    }
+    .navbar-dark .navbar-toggler{
+        color: #ffffff;
+        border-color: #ffffff;
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        color: #ffffff;
+    }
+    nav .nav-link:hover {
+        background: unset;
+        box-shadow: unset;
+    }
+    nav{
+        position: fixed;
+    }
+    .f-60{
+        font-size: 48px;
+    }
+    .f-40{
+        font-size: 34px;
+    }
+    .f-32{
+        font-size: 22px;
+    }
+    .f-28{
+        font-size: 22px;
+    }
+    .box-text-main{
+        height: 460px;
+        justify-content: unset;
+    }
+    .box-text{
+        justify-content: space-between;
+        height: 385px;
+
+    }
+    .card .imgBx{
+        transform: translateY(-50%);
     }
 }
 

@@ -1,0 +1,13 @@
+.mobile-footer{
+    width: 100%;
+    max-height: 200px;
+    background: linear-gradient(180deg, #010101 0.6%, #29323D 42.1%, #485460 118.46%);
+}
+.footer-inst-link{
+    width: 100%;
+    text-decoration: none;
+}
+.footer-inst-link:hover{
+    color: #ffffff;
+    text-decoration: none;
+}

@@ -26,6 +26,11 @@ const user = sequelize.define('User', {
     },
     resetToken: {
         type: Sequelize.STRING
+    },
+    isAdmin: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: 0
     }
 })
 

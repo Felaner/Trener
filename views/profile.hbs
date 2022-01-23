@@ -1,15 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            {{#if course.length}}
-                {{#each course}}
                 <div>
-                    <h3>{{name}}</h3>
-                    <p>{{description}}</p>
-                    <p>{{duration}}</p>
+                    <h3>{{course.name}}</h3>
+                    <p>{{course.description}}</p>
+                    <p>{{course.duration}}</p>
                 </div>
-                {{/each}}
-            {{/if}}
         </div>
     </div>
 </div>

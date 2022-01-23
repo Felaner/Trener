@@ -8,7 +8,6 @@
 @import url('styles/auth.css');
 @import url('styles/media.css');
 
-html,
 body {
     background: linear-gradient(to bottom right, #28313B, #485461) no-repeat;
 }

@@ -6,3 +6,9 @@ $(function () {
         $('#register').addClass('show active')
     }
 })
+
+$(function () {
+    if (!location.pathname.indexOf('/auth/login')) {
+        $('body').css('background', 'none');
+    }
+});

@@ -8,12 +8,15 @@ const User = require('../models/user');
 const Courses = require('../models/course');
 
 router.get('/', auth, async (req, res) => {
-    const user = await User.findOne({where: {id: 1}})
-    const course = Courses.findOne({
+    const user = await User.findOne({where: {id: req.user.id}})
+    const course = await Courses.findOne({
         where: {id: user.course},
-        attributes: ['name', 'description', 'duration']
+        attributes: [
+            'name',
+            'description',
+            'duration'
+        ]
     })
-    console.log(course)
     res.render('profile', {
         title: 'Личный кабинет',
         isProfile: true,

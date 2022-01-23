@@ -1,5 +1,5 @@
 <!--Главная-->
-<div class="container-fluid">
+<div class="container-fluid d-none d-sm-block">
     <div class="row">
         <div class="col-12 p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -32,11 +32,11 @@
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <img src="images/icons/arrow-left.svg" alt="arrow-leftt" class="carousel-control-prev-icon" aria-hidden="true">
                     <span class="sr-only">Предыдущий</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <img src="images/icons/arrow-right.svg" alt="arrow-right" class="carousel-control-next-icon" aria-hidden="true">
                     <span class="sr-only">Следующий</span>
                 </a>
             </div>
@@ -44,21 +44,21 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container d-none d-sm-block">
     <div class="row mt-5">
         <div class="col-lg-6 col-md-12 p-0">
-            <div class="box">
+            <div class="box mx-sm-auto mb-sm-3">
                 <div class="f-white ml-3 f-40">Имя Фамилия</div>
                 <div class="box-images">
                     <img src="images/trainer.png" alt="trainer">
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-12 p-0 box-text">
-            <div class="f-white f-40">Заголовок блока</div>
-            <div class="f-white f-28">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
-            <div class="f-white f-28">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
-            <button class="button">Присоединиться</button>
+        <div class="col-lg-6 col-md-12 p-0 box-text-main">
+            <div class="f-white text-lg-left text-sm-center f-40 mt-sm-5">Заголовок блока</div>
+            <div class="f-white text-lg-left text-sm-center f-28 mt-sm-2">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
+            <div class="f-white text-lg-left text-sm-center f-28 mt-sm-2">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
+            <button class="button mx-sm-auto mt-sm-4">Присоединиться</button>
         </div>
     </div>
 
@@ -67,7 +67,7 @@
     <div class="row">
         <div class="col-12"><h2 class="text-center f-40 f-white mb-5">Почему нужно заниматься</h2></div>
         <div class="col-lg-4">
-            <div class="reason-box d-flex flex-column align-items-center p-2">
+            <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
                 <div class="icon mt-3"><img src="images/icons/Reason-icon.svg" alt="icon"></div>
                 <div class="reason-box-title f-40 mt-2">Причина 1</div>
                 <div class="title-divider"></div>
@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-lg-4">
-            <div class="reason-box d-flex flex-column align-items-center p-2">
+            <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
                 <div class="icon mt-3"><img src="images/icons/Reason-icon.svg" alt="icon"></div>
                 <div class="reason-box-title f-40 mt-2">Причина 1</div>
                 <div class="title-divider"></div>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="col-lg-4">
-            <div class="reason-box d-flex flex-column align-items-center p-2">
+            <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
                 <div class="icon mt-3"><img src="images/icons/Reason-icon.svg" alt="icon"></div>
                 <div class="reason-box-title f-40 mt-2">Причина 1</div>
                 <div class="title-divider"></div>
@@ -95,158 +95,256 @@
     </div>
 
     <div class="row f-white">
-        <div class="col-12 f-40 text-center mt-5">Еще немного текста о пользе занятий</div>
-        <div class="col-12 f-28 text-center mt-5">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
-        <div class="col-12 f-28 text-center mt-5">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
-        <div class="col-12 f-28 text-center mt-5">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
-        <button class="button mx-auto mt-5">Присоединиться</button>
+        <div class="col-12 f-40 text-center mt-lg-5 mt-sm-3">Еще немного текста о пользе занятий</div>
+        <div class="col-12 f-28 text-center mt-lg-5 mt-sm-3">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
+        <div class="col-12 f-28 text-center mt-lg-5 mt-sm-3">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
+        <div class="col-12 f-28 text-center mt-lg-5 mt-sm-3">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
+        <button class="button mx-auto mt-lg-5 mt-sm-3">Присоединиться</button>
+    </div>
+
+    <div class="divider mt-5"></div>
+
+</div>
+
+<div class="parallax d-none d-sm-block">
+    <div class="container-fluid pt-5 pb-5">
+        <div class="f-white f-40 text-center mb-5">Результаты подписчиков</div>
+        <div class="row">
+            <div class="col-12 p-0">
+                <div id="carousel2" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel2" data-slide-to="1"></li>
+                        <li data-target="#carousel2" data-slide-to="2"></li>
+                    </ol>
+                    <div class="container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="col-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box mx-auto">
+                                                    <div class="box-images">
+                                                        <img src="images/trainer.png" alt="trainer">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box-images mx-auto">
+                                                    <img src="images/trainer.png" alt="trainer" class="position-relative">
+                                                    <div class="box-green position-absolute"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box mx-auto">
+                                                    <div class="box-images">
+                                                        <img src="images/trainer.png" alt="trainer">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box-images mx-auto">
+                                                    <img src="images/trainer.png" alt="trainer" class="position-relative">
+                                                    <div class="box-green position-absolute"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box mx-auto">
+                                                    <div class="box-images">
+                                                        <img src="images/trainer.png" alt="trainer">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 carousel-results-box">
+                                            <div class="carousel-results-img">
+                                                <div class="box-images mx-auto">
+                                                    <img src="images/trainer.png" alt="trainer" class="position-relative">
+                                                    <div class="box-green position-absolute"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                        <img src="images/icons/arrow-left.svg" alt="arrow-left" class="carousel-control-prev-icon" aria-hidden="true">
+                        <span class="sr-only">Предыдущий</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                        <img src="images/icons/arrow-right.svg" alt="arrow-right" class="carousel-control-next-icon" aria-hidden="true">
+                        <span class="sr-only">Следующий</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-none d-sm-block">
+
+    <div class="divider mb-5"></div>
+
+    <h2 class="f-white text-center f-40 mb-5">О себе</h2>
+
+    <div class="row">
+        <div class="col-lg-6 col-sm-12 p-0">
+            <div class="box mx-lg-0 mx-sm-auto">
+                <div class="f-white ml-3 f-40">Имя Фамилия</div>
+                <div class="box-images">
+                    <img src="images/trainer.png" alt="trainer">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 p-0 box-text mt-lg-0 mt-sm-5">
+            <div class="f-white about-title f-40 text-center mx-lg-0 mx-sm-auto mt-lg-0 mt-sm-5">Заголовок блока</div>
+            <div class="f-white f-32 mt-sm-3 text-lg-left text-sm-center">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
+        </div>
+    </div>
+
+    <div class="row mt-5 pt-2">
+        <div class="col-lg-6 col-sm-12 p-0 box-text order-lg-1 order-sm-2 mt-lg-0 mt-sm-5">
+            <div class="f-white about-title-green f-40 text-center mx-lg-0 mx-sm-auto mt-lg-0 mt-sm-5">Заголовок блока</div>
+            <div class="f-white f-32 mt-sm-3 text-lg-left text-sm-center">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
+        </div>
+        <div class="col-lg-6 col-sm-12 p-0 order-lg-2 order-sm-1 d-flex flex-column align-items-end">
+            <div class="box-green mx-lg-0 mx-sm-auto">
+                <div class="f-white ml-3 f-40">Имя Фамилия</div>
+                <div class="box-images">
+                    <img src="images/trainer.png" alt="trainer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 pt-2">
+        <div class="col-lg-6 col-sm-12 p-0">
+            <div class="box mx-lg-0 mx-sm-auto">
+                <div class="f-white ml-3 f-40">Имя Фамилия</div>
+                <div class="box-images">
+                    <img src="images/trainer.png" alt="trainer">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 p-0 box-text mt-lg-0 mt-sm-5">
+            <div class="f-white about-title f-40 text-center mx-lg-0 mx-sm-auto mt-lg-0 mt-sm-5">Заголовок блока</div>
+            <div class="f-white f-32 mt-sm-3 text-lg-left text-sm-center">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
+        </div>
     </div>
 
     <div class="divider mt-5 mb-5"></div>
 
 </div>
 
-<div class="container">
-    <div class="f-white f-40 text-center mb-5">Результаты подписчиков</div>
+<div class="container-fluid contacts pb-5 pt-5 d-none d-sm-block">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12"><h2 class="text-center f-40 f-white">Контакты</h2></div>
+            <div class="col-xl-4 col-12 mt-xl-0 mt-sm-3">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href=""><img class="mr-3" src="images/icons/phone.svg" alt="">8-956-765-73-90</a>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center mt-3">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href=""><img class="mr-3" src="images/icons/phone.svg" alt="">8-956-765-73-90</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 mt-xl-0 mt-sm-3 d-flex justify-lg-content-around justify-content-sm-center align-items-center pl-5 pr-5">
+                <a class="mr-lg-3 mr-sm-3" href="">
+                    <img src="images/icons/whatsup.svg" alt="">
+                </a>
+                <a class="ml-lg-3 ml-sm-3" href="">
+                    <img src="images/icons/telegram.svg" alt="">
+                </a>
+            </div>
+            <div class="col-xl-4 col-sm-12 mt-xl-0 mt-sm-3">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-6 contacts-mail d-flex align-items-center">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href="">
+                            <img src="images/icons/mail.svg" alt="">email@example.com
+                        </a>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center mt-3">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href="">
+                            <img src="images/icons/mail.svg" alt="">email@example.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 f-32 f-white contacts-inst d-flex justify-content-center align-items-center mt-3">
+                Мой аккаунт в Instagram
+                <a class="ml-3" href="">
+                    <img class="mr-3" src="images/icons/inst.svg" alt="">@inst-name
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Мобильная версия-->
+
+<div class="container-fluid mobile-carousel d-sm-none d-block">
     <div class="row">
         <div class="col-12 p-0">
-            <div id="carousel2" class="carousel slide" data-ride="carousel">
+            <div id="carouselMobileIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel2" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel2" data-slide-to="1"></li>
-                    <li data-target="#carousel2" data-slide-to="2"></li>
+                    <li data-target="#carouselMobileIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselMobileIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselMobileIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="col-12">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box mx-auto">
-                                            <div class="box-images">
-                                                <img src="images/trainer.png" alt="trainer">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box-images mx-auto">
-                                            <img src="images/trainer.png" alt="trainer" class="position-relative">
-                                            <div class="box-green position-absolute"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5 mb-5">
-                                <div class="col-12">
-                                    <div class="row justify-content-center">
-                                        <h5 class="f-40 f-white">Имя Фамилия</h5>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1 offset-1 d-flex justify-content-end">
-                                            <img src="images/icons/left-cov.svg" alt="cov" class="align-self-start">
-                                        </div>
-                                        <div class="col-8">
-                                            <p class="f-28 text-center f-white">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</p>
-                                        </div>
-                                        <div class="col-1">
-                                            <img src="images/icons/right-cov.svg" alt="cov">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="carousel-item mobile-carousel-item active">
+                        <img src="images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
+                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
+                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-12">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box mx-auto">
-                                            <div class="box-images">
-                                                <img src="images/trainer.png" alt="trainer">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box-images mx-auto">
-                                            <img src="images/trainer.png" alt="trainer" class="position-relative">
-                                            <div class="box-green position-absolute"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5 mb-5">
-                                <div class="col-12">
-                                    <div class="row justify-content-center">
-                                        <h5 class="f-40 f-white">Имя Фамилия</h5>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1 offset-1 d-flex justify-content-end">
-                                            <img src="images/icons/left-cov.svg" alt="cov" class="align-self-start">
-                                        </div>
-                                        <div class="col-8">
-                                            <p class="f-28 text-center f-white">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</p>
-                                        </div>
-                                        <div class="col-1">
-                                            <img src="images/icons/right-cov.svg" alt="cov">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="carousel-item mobile-carousel-item">
+                        <img src="images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
+                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
+                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-12">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box mx-auto">
-                                            <div class="box-images">
-                                                <img src="images/trainer.png" alt="trainer">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 carousel-results-box">
-                                    <div class="carousel-results-img">
-                                        <div class="box-images mx-auto">
-                                            <img src="images/trainer.png" alt="trainer" class="position-relative">
-                                            <div class="box-green position-absolute"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5 mb-5">
-                                <div class="col-12">
-                                    <div class="row justify-content-center">
-                                        <h5 class="f-40 f-white">Имя Фамилия</h5>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1 offset-1 d-flex justify-content-end">
-                                            <img src="images/icons/left-cov.svg" alt="cov" class="align-self-start">
-                                        </div>
-                                        <div class="col-8">
-                                            <p class="f-28 text-center f-white">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</p>
-                                        </div>
-                                        <div class="col-1">
-                                            <img src="images/icons/right-cov.svg" alt="cov">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="carousel-item mobile-carousel-item">
+                        <img src="images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
+                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
+                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <a class="carousel-control-prev d-none" href="#carouselMobileIndicators" role="button" data-slide="prev">
+                    <img src="images/icons/arrow-left.svg" alt="arrow-leftt" class="carousel-control-prev-icon" aria-hidden="true">
                     <span class="sr-only">Предыдущий</span>
                 </a>
-                <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <a class="carousel-control-next d-none" href="#carouselMobileIndicators" role="button" data-slide="next">
+                    <img src="images/icons/arrow-right.svg" alt="arrow-right" class="carousel-control-next-icon" aria-hidden="true">
                     <span class="sr-only">Следующий</span>
                 </a>
             </div>
@@ -254,181 +352,135 @@
     </div>
 </div>
 
-<div class="container">
-
-    <div class="divider mt-5 mb-5"></div>
-
-    <h2 class="f-white text-center f-40 mb-5">О себе</h2>
-
+<div class="container d-sm-none d-block">
+    <div class="row mt-3 align-items-center">
+        <div class="mobile-divider mx-auto mb-3"></div>
+        <div class="col-4 p-0 pl-1">
+            <div class="mobile-box mx-auto">
+                <img class="img-fluid" src="images/trainer.png" alt="trainer">
+            </div>
+        </div>
+        <div class="col-8 mx-auto pl-3 pr-3 d-flex flex-column justify-content-between">
+            <div class="f-white text-center font-weight-bold f-16 mb-1">Заголовок блока</div>
+            <div class="f-white text-left f-14 mb-1">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
+            <button class="mobile-button mx-auto mt-sm-4">Присоединиться</button>
+        </div>
+        <div class="mobile-divider mx-auto mt-3"></div>
+    </div>
     <div class="row">
-        <div class="col-lg-6 col-md-12 p-0">
-            <div class="box">
-                <div class="f-white ml-3 f-40">Имя Фамилия</div>
-                <div class="box-images">
-                    <img src="images/trainer.png" alt="trainer">
+        <div class="col-12"><h2 class="f-white f-16 text-center mt-3">Почему нужно заниматься</h2></div>
+    </div>
+    <div class="mt-3 horizontal-scroll">
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
+            <div class="icon mt-3"><img class="img-fluid" src="images/icons/Reason-icon.svg" alt="icon"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 1</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
+        </div>
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
+            <div class="icon mt-3"><img class="img-fluid" src="images/icons/Reason-icon.svg" alt="icon"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 2</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
+        </div>
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2">
+            <div class="icon mt-3"><img class="img-fluid" src="images/icons/Reason-icon.svg" alt="icon"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 3</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 text-center f-white f-16 font-weight-bold mb-2">Еще немного текста о пользе занятий</div>
+        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
+        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
+        <div class="col-12 d-flex justify-content-center"><button class="mobile-button mt-sm-4">Присоединиться</button></div>
+    </div>
+</div>
+
+<div class="parallax d-sm-none d-block">
+    <div class="f-white f-18 text-center mt-2 font-weight-bold">Результаты подсписчиков</div>
+    <div class="parallax-wrapper">
+        <div class="mt-3 horizontal-scroll">
+            <div class="mobile-result-box d-flex align-items-center p-2 mr-3">
+               <div class="mobile-box-before">
+                   <div class="blue-wrapper">
+                       <img class="img-fluid" src="images/trainer.png" alt="">
+                   </div>
+               </div>
+                <div class="mobile-box-after">
+                    <div class="green-wrapper">
+                        <img class="img-fluid" src="images/trainer.png" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-12 p-0 box-text">
-            <div class="f-white about-title f-40 pl-3">Заголовок блока</div>
-            <div class="f-white f-32">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-lg-6 col-md-12 p-0 box-text">
-            <div class="f-white about-title-green f-40 pl-3">Заголовок блока</div>
-            <div class="f-white f-32">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
-        </div>
-        <div class="col-lg-6 col-md-12 p-0 d-flex flex-column align-items-end">
-            <div class="box-green">
-                <div class="f-white ml-3 f-40">Имя Фамилия</div>
-                <div class="box-images">
-                    <img src="images/trainer.png" alt="trainer">
+            <div class="mobile-result-box d-flex justify-content-between align-items-center p-2 mr-3">
+                <div class="mobile-box-before">
+                    <div class="blue-wrapper">
+                        <img class="img-fluid" src="images/trainer.png" alt="">
+                    </div>
                 </div>
+<!--                <div class="mobile-box-after">-->
+<!--                    <div class="green-wrapper">-->
+<!--                        <img class="img-fluid" src="images/trainer.png" alt="">-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-lg-6 col-md-12 p-0">
-            <div class="box">
-                <div class="f-white ml-3 f-40">Имя Фамилия</div>
-                <div class="box-images">
-                    <img src="images/trainer.png" alt="trainer">
+            <div class="mobile-result-box d-flex justify-content-between align-items-center p-2 mr-3">
+                <div class="mobile-box-before">
+                    <div class="blue-wrapper">
+                        <img class="img-fluid" src="images/trainer.png" alt="">
+                    </div>
                 </div>
+<!--                <div class="mobile-box-after">-->
+<!--                    <div class="green-wrapper">-->
+<!--                        <img class="img-fluid" src="images/trainer.png" alt="">-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
-        </div>
-        <div class="col-lg-6 col-md-12 p-0 box-text">
-            <div class="f-white about-title f-40 pl-3">Заголовок блока</div>
-            <div class="f-white f-32">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare</div>
         </div>
     </div>
+</div>
 
-    <div class="divider mt-5 mb-5"></div>
-
-    <h2 class="f-40 f-white text-center">Заголовок</h2>
-    <h3 class="f-26 f-white text-center mt-5">commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis</h3>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="card d-flex flex-column align-items-center mx-auto mt-5">
-                <div class="card-price f-white f-60 font-weight-bold">10<sup>00</sup> руб.</div>
-                <div class="card-price-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <button class="button mt-5">Оформить</button>
+<div class="container d-sm-none d-block">
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="mobile-box-img">
+                <img src="images/trainer.png" alt="">
             </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card d-flex flex-column align-items-center mx-auto mt-5">
-                <div class="card-price f-white f-60 font-weight-bold">10<sup>00</sup> руб.</div>
-                <div class="card-price-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <button class="button mt-5">Оформить</button>
+            <div class="col-12 p-0 mt-3">
+                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>
             </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card d-flex flex-column align-items-center mx-auto mt-5">
-                <div class="card-price f-white f-60 font-weight-bold">10<sup>00</sup> руб.</div>
-                <div class="card-price-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <button class="button mt-5">Оформить</button>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card d-flex flex-column align-items-center mx-auto mt-5">
-                <div class="card-price f-white f-60 font-weight-bold">10<sup>00</sup> руб.</div>
-                <div class="card-price-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <div class="card-advantage f-20 f-white mt-4"><span>Преимущества</span> пакета</div>
-                <div class="card-advantage-divider"></div>
-                <button class="button mt-5">Оформить</button>
+            <div class="col-12 mt-2">
+                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
             </div>
         </div>
     </div>
 
-    <div class="divider mt-5 mb-5"></div>
-
-    <h2 class="text-center f-40 f-white">Контакты</h2>
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center align-items-center mt-3">
-            <img src="images/icons/inst.svg" alt="instagram" width="60px">
-            <div class="contacts-inst f-32 f-white ml-2">inst_name</div>
-        </div>
-        <div class="col-12 d-flex justify-content-center align-items-center mt-3">
-            <img src="images/icons/mail.svg" alt="email" width="60px">
-            <div class="contacts-inst f-32 f-white ml-2">example@mail.ru</div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="mobile-box-img-green">
+                <img src="images/trainer.png" alt="">
+            </div>
+            <div class="col-12 p-0 mt-3">
+                <div class="f-white f-16 font-weight-bold mobile-box-title-green d-flex justify-content-center align-items-center">Lorem ipsum</div>
+            </div>
+            <div class="col-12 mt-2">
+                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
+            </div>
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="mobile-box-img">
+                <img src="images/trainer.png" alt="">
             </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
+            <div class="col-12 p-0 mt-3">
+                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>
             </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12 p-0 mt-3">
-            <div class="contacts-galery mx-auto">
-                <img src="images/inst-galery.png" alt="" class="img-fluid">
+            <div class="col-12 mt-2">
+                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
             </div>
         </div>
     </div>

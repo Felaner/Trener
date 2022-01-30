@@ -1,89 +1,91 @@
-<div class="container">
-    <div class="col-12">
-        <div class="row justify-content-center">
-            <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active f-32" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Вход</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link f-32" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Регистрация</a>
-                </li>
-            </ul>
-        </div>
-        <div class="row justify-content-center">
-            <div class="tab-content w-50" id="myTabContent">
-                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                    {{#if loginError}}
-                        <div class="alert alert-danger">{{loginError}}</div>
-                    {{/if}}
-                    {{#if registerSuccessfully}}
-                        <div class="alert alert-success">{{registerSuccessfully}}</div>
-                    {{/if}}
-                    {{#if resetEmail}}
-                        <div class="alert alert-success">{{resetEmail}}</div>
-                    {{/if}}
-                    {{#if resetSuccessfully}}
-                        <div class="alert alert-success">{{resetSuccessfully}}</div>
-                    {{/if}}
+<div class="container-fluid form-bg">
+    <div class="container">
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <ul class="nav nav-tabs mt-3 border-0" id="myTab" role="tablist">
+                    <li class="nav-item auth-button" role="presentation">
+                        <a class="nav-link active f-32 " id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Вход</a>
+                    </li>
+                    <li class="nav-item auth-button" role="presentation">
+                        <a class="nav-link f-32" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Регистрация</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row justify-content-center">
+                <div class="tab-content w-50" id="myTabContent">
+                    <div class="tab-pane fade show active tab-shadow" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        {{#if loginError}}
+                            <div class="alert alert-danger">{{loginError}}</div>
+                        {{/if}}
+                        {{#if registerSuccessfully}}
+                            <div class="alert alert-success">{{registerSuccessfully}}</div>
+                        {{/if}}
+                        {{#if resetEmail}}
+                            <div class="alert alert-success">{{resetEmail}}</div>
+                        {{/if}}
+                        {{#if resetSuccessfully}}
+                            <div class="alert alert-success">{{resetSuccessfully}}</div>
+                        {{/if}}
 
-                    <div class="login-form">
-                        <h3>Войти</h3>
-                        <form action="/auth/login" method="POST">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input id="email" name="email" type="email" class="form-control" placeholder="Email" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Пароль *</label>
-                                <input id="password" name="password" type="password" class="form-control" placeholder="Пароль" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="_csrf" value="{{csrf}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Войти" />
-                            </div>
-                            <div class="form-group">
-                                <a href="/auth/reset" class="ForgetPwd">Забыли пароль?</a>
-                            </div>
-                        </form>
+                        <div class="login-form">
+                            <h3>Войти</h3>
+                            <form action="/auth/login" method="POST">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Email" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Пароль *</label>
+                                    <input id="password" name="password" type="password" class="form-control" placeholder="Пароль" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="_csrf" value="{{csrf}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btnSubmit" value="Войти" />
+                                </div>
+                                <div class="form-group">
+                                    <a href="/auth/reset" class="ForgetPwd">Забыли пароль?</a>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                    {{#if registerError}}
-                        <p class="alert alert-danger">{{registerError}}</p>
-                    {{/if}}
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                        {{#if registerError}}
+                            <p class="alert alert-danger">{{registerError}}</p>
+                        {{/if}}
 
-                    <div class="login-form">
-                        <h3>Регистрация</h3>
-                        <form action="/auth/register" method="POST">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input id="remail" name="email" type="email" class="form-control" placeholder="Введите email" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="rpassword">Пароль *</label>
-                                <input id="rpassword" name="password" type="password" class="form-control" placeholder="Введите пароль" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="confirm">Повторите пароль *</label>
-                                <input id="confirm" name="confirm" type="password" class="form-control" placeholder="Повторите пароль" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Имя *</label>
-                                <input id="name" name="name" type="text" class="form-control" placeholder="Введите имя" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="secondName">Фамилия *</label>
-                                <input id="secondName" name="secondName" type="text" class="form-control" placeholder="Введите фамилию" value="" required/>
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="_csrf" value="{{csrf}}">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Зарегистрироваться" />
-                            </div>
-                        </form>
+                        <div class="login-form">
+                            <h3>Регистрация</h3>
+                            <form action="/auth/register" method="POST">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input id="remail" name="email" type="email" class="form-control" placeholder="Введите email" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rpassword">Пароль *</label>
+                                    <input id="rpassword" name="password" type="password" class="form-control" placeholder="Введите пароль" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm">Повторите пароль *</label>
+                                    <input id="confirm" name="confirm" type="password" class="form-control" placeholder="Повторите пароль" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Имя *</label>
+                                    <input id="name" name="name" type="text" class="form-control" placeholder="Введите имя" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="secondName">Фамилия *</label>
+                                    <input id="secondName" name="secondName" type="text" class="form-control" placeholder="Введите фамилию" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="_csrf" value="{{csrf}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btnSubmit" value="Зарегистрироваться" />
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

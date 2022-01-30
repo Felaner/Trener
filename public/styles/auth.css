@@ -1,9 +1,18 @@
+.form-bg{
+    background-image: url("../images/parallax.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 100vh;
+}
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #009900;
+    color: #ffffff;
+    background: #0653b6;
+    border-radius: 50px;
 }
 
 .nav-tabs .nav-link {
-    color: #0653b6;
+    color: #ffffff;
 }
 
 .tab-pane {
@@ -17,11 +26,11 @@
 
 .login-form {
     padding: 5%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form h3 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
+    font-weight: bold;
 }
 .btnSubmit {
     width: 50%;
@@ -36,7 +45,38 @@
     background-color: #0062cc;
 }
 .login-form .ForgetPwd{
-    color: #0062cc;
+    color: #ffffff;
     font-weight: 600;
     text-decoration: none;
 }
+.tab-shadow{
+
+}
+.auth-button{
+
+}
+.auth-button .nav-link{
+    border: none;
+}
+.form-group label{
+    color: #ffffff;
+}
+.form-control{
+    background: rgba(255,255,255,.2);
+    border: 1px solid transparent;
+    transition: 0.4s all;
+    color: #ffffff !important;
+}
+.form-control:hover{
+    background: rgba(255,255,255,.0);
+    border: 1px solid rgba(255,255,255,.4);
+}
+.form-control:focus{
+    background: rgba(255,255,255,.0);
+    border: 1px solid rgba(255,255,255,.4);
+    box-shadow: none;
+}
+.form-control::placeholder{
+    color: #ffffff;
+}
+

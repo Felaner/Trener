@@ -52,24 +52,38 @@ router.post('/', auth, async (req, res) => {
 });
 
 router.post('/edit-image', auth, async (req, res) => {
-    const character = await Character.findOne({where: {userId: req.user.id}})
-    console.log(req.files['imageSelect'])
-    if (req.files['imageSelect']) {
-        const dirname = `public/images/avatars`
+    try {
+        const character = await Character.findOne({where: {userId: req.user.id}})
+        if (req.files['imageSelect']) {
+            const dirname = `public/images/avatars`
 
-        await req.files['imageSelect'].forEach(el => {
-            const filename = uuidv4() + path.parse(el.originalname).ext
-            sharp(el.buffer)
-                .rotate()
-                .toFile(dirname + `/${filename}`)
-            character.update({
-                image: `/images/avatars/${filename}`
-            }).catch(err => {
-                console.log(err)
-            });
-        })
+            await req.files['imageSelect'].forEach(el => {
+                const filename = uuidv4() + path.parse(el.originalname).ext
+                sharp(el.buffer)
+                    .rotate()
+                    .toFile(dirname + `/${filename}`)
+                if (!character) {
+                    Character.create({
+                        image: `/images/avatars/${filename}`,
+                        userId: req.user.id
+                    }).then(el => {
+                        return res.redirect('/profile')
+                    })
+                } else {
+                    character.update({
+                        image: `/images/avatars/${filename}`
+                    }).then(el => {
+                        return res.redirect('/profile')
+                    })
+                }
+            })
+        } else {
+            alert('Вы не добавили изображение')
+            return false
+        }
+    } catch (err) {
+        console.log(err)
     }
-    return res.redirect('/profile')
 });
 
 module.exports = router;

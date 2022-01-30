@@ -5,7 +5,7 @@
             <div class="box mx-sm-auto mb-sm-3">
                 <div class="f-white ml-3 f-40">{{user.name}} {{user.secondName}}</div>
                 <div class="box-images">
-                    <img src="{{user.Character.image}}" alt="avatar">
+                    <img src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/avatars/chooseImage.png{{/if}}" alt="avatar">
                 </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
                 {{#if user.Character.growth}}
                     <div class="value f-white f-32"><span class="value-digit">{{user.Character.growth}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-32">Не указано</div>
+                    <div class="value f-white f-32"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="growth" id="growth" type="number" value="{{user.Character.growth}}">
             </div>
@@ -25,7 +25,7 @@
                 {{#if user.Character.weight}}
                     <div class="value f-white f-32"><span class="value-digit">{{user.Character.weight}}</span> кг</div>
                 {{else}}
-                    <div class="value f-white f-32">Не указано</div>
+                    <div class="value f-white f-32"><span class="value-digit">--</span> кг</div>
                 {{/if}}
                 <input class="d-none" name="weight" id="weight" type="number" value="{{user.Character.weight}}">
             </div>
@@ -35,7 +35,7 @@
                 {{#if user.Character.bust}}
                     <div class="value f-white f-32"><span class="value-digit">{{user.Character.bust}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-32">Не указано</div>
+                    <div class="value f-white f-32"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="bust" id="bust" type="number" value="{{user.Character.bust}}">
             </div>
@@ -45,7 +45,7 @@
                 {{#if user.Character.waist}}
                     <div class="value f-white f-32"><span class="value-digit">{{user.Character.waist}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-32">Не указано</div>
+                    <div class="value f-white f-32"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="waist" id="waist" type="number" value="{{user.Character.waist}}">
             </div>
@@ -55,7 +55,7 @@
                 {{#if user.Character.girth}}
                     <div class="value f-white f-32"><span class="value-digit">{{user.Character.girth}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-32">Не указано</div>
+                    <div class="value f-white f-32"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="girth" id="girth" type="number" value="{{user.Character.girth}}">
             </div>
@@ -96,7 +96,7 @@
 </div>
 
 <div class="parallax d-sm-block d-none">
-    <div class="row">
+    <div class="row w-100">
         <div class="col-12 text-center f-white f-40 mt-5">Видео тренировки</div>
     </div>
 </div>
@@ -114,8 +114,8 @@
 <div class="container d-sm-none d-block">
     <div class="row">
         <div class="col-12 f-white text-center f-18 font-weight-bold mt-5">Личный кабинет</div>
-        <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="images/trainer.png" alt=""></div>
-        <div class="col-12 text-center f-16 f-white mt-3">Имя Фамилия</div>
+        <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/avatars/chooseImage.png{{/if}}" alt="avatar"></div>
+        <div class="col-12 text-center f-16 f-white mt-3">{{user.name}} {{user.secondName}}</div>
         <div class="col-12 d-flex justify-content-center mt-3">
             <button class="mobile-button-parameters f-white f-16">Параметры</button>
         </div>
@@ -125,7 +125,7 @@
                 {{#if user.Character.growth}}
                     <div class="value f-white f-16"><span class="value-digit">{{user.Character.growth}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-16">Не указано</div>
+                    <div class="value f-white f-16"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="growth" id="growth" type="number" value="{{user.Character.growth}}">
             </div>
@@ -135,7 +135,7 @@
                 {{#if user.Character.weight}}
                     <div class="value f-white f-16"><span class="value-digit">{{user.Character.weight}}</span> кг</div>
                 {{else}}
-                    <div class="value f-white f-16">Не указано</div>
+                    <div class="value f-white f-16"><span class="value-digit">--</span> кг</div>
                 {{/if}}
                 <input class="d-none" name="weight" id="weight" type="number" value="{{user.Character.weight}}">
             </div>
@@ -145,7 +145,7 @@
                 {{#if user.Character.bust}}
                     <div class="value f-white f-16"><span class="value-digit">{{user.Character.bust}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-16">Не указано</div>
+                    <div class="value f-white f-16"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="bust" id="bust" type="number" value="{{user.Character.bust}}">
             </div>
@@ -155,7 +155,7 @@
                 {{#if user.Character.waist}}
                     <div class="value f-white f-16"><span class="value-digit">{{user.Character.waist}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-16">Не указано</div>
+                    <div class="value f-white f-16"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="waist" id="waist" type="number" value="{{user.Character.waist}}">
             </div>
@@ -165,7 +165,7 @@
                 {{#if user.Character.girth}}
                     <div class="value f-white f-16"><span class="value-digit">{{user.Character.girth}}</span> см</div>
                 {{else}}
-                    <div class="value f-white f-16">Не указано</div>
+                    <div class="value f-white f-16"><span class="value-digit">--</span> см</div>
                 {{/if}}
                 <input class="d-none" name="girth" id="girth" type="number" value="{{user.Character.girth}}">
             </div>

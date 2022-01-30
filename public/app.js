@@ -112,25 +112,33 @@ $('.mobile-button-parameters').on('click', function(el) {
 $(".save-profile").on("click", el => {
     const values = el.target.parentNode.parentNode.querySelectorAll('input')
     const characters = {}
+    let result = true
     values.forEach((el, i) => {
         if (i !== 5) {
-            characters[i] = el.value
+            if (/^(0|-?[1-9]\d{1,2})$/.test(el.value)) {
+                characters[i] = el.value
+            } else {
+                result = false
+            }
         }
     })
-    console.log(characters)
-    $.ajax({
-        type: 'POST',
-        url: '/profile',
-        data: characters,
-        error: function(jqXHR, textStatus, err) {
-            console.log('error: ' + err)
-        },
-        beforeSend: function() {
-            console.log('loading')
-        },
-        success: function(data) {
-            saveProfile(el.target, characters)
-        }
-    })
-    return false;
+    if (result === false) {
+        alert('Недопустимые значения')
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: '/profile',
+            data: characters,
+            error: function(jqXHR, textStatus, err) {
+                console.log('error: ' + err)
+            },
+            beforeSend: function() {
+                console.log('loading')
+            },
+            success: function(data) {
+                saveProfile(el.target, characters)
+            }
+        })
+        return false;
+    }
 })

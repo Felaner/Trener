@@ -1,8 +1,26 @@
+.imageFormBox {
+    display: none;
+    background: white;
+    width: 60%;
+    height: 60%;
+    min-width: 400px;
+    max-width: 500px;
+    padding: 40px;
+    overflow: auto;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
 .profile-status{
     background: #005cbf;
     width: 100%;
     border-radius: 10px;
     padding: 20px;
+}
+
+.edit-profile {
+    width: auto;
+    padding: 0 20px;
 }
 .progress{
     height: 40px;

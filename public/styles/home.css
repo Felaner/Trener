@@ -45,6 +45,13 @@
     left: 19px;
 }
 
+.box-images img {
+    object-fit: contain;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+}
+
 .button{
     display: flex;
     justify-content: center;

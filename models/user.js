@@ -46,24 +46,29 @@ const character = sequelize.define('Character', {
         type: Sequelize.INTEGER
     },
     growth: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     weight: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     bust: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     waist: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
     },
     girth: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER
+    },
+    image: {
+        allowNull: true,
+        type: Sequelize.STRING,
+        defaultValue: '/images/avatars/chooseImage.png'
     },
     userId: {
         type: Sequelize.INTEGER,

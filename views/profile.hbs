@@ -5,7 +5,7 @@
             <div class="box mx-sm-auto mb-sm-3">
                 <div class="f-white ml-3 f-40">{{user.name}} {{user.secondName}}</div>
                 <div class="box-images">
-                    <img src="images/trainer.png" alt="trainer">
+                    <img src="{{user.Character.image}}" alt="avatar">
                 </div>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-32">Рост</div>
                 {{#if user.Character.growth}}
-                    <div class="value f-white f-32">{{user.Character.growth}} см</div>
+                    <div class="value f-white f-32"><span class="value-digit">{{user.Character.growth}}</span> см</div>
                 {{else}}
                     <div class="value f-white f-32">Не указано</div>
                 {{/if}}
@@ -23,7 +23,7 @@
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-32">Вес</div>
                 {{#if user.Character.weight}}
-                    <div class="value f-white f-32">{{user.Character.weight}} кг</div>
+                    <div class="value f-white f-32"><span class="value-digit">{{user.Character.weight}}</span> кг</div>
                 {{else}}
                     <div class="value f-white f-32">Не указано</div>
                 {{/if}}
@@ -33,7 +33,7 @@
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-32">Обхват груди</div>
                 {{#if user.Character.bust}}
-                    <div class="value f-white f-32">{{user.Character.bust}} см</div>
+                    <div class="value f-white f-32"><span class="value-digit">{{user.Character.bust}}</span> см</div>
                 {{else}}
                     <div class="value f-white f-32">Не указано</div>
                 {{/if}}
@@ -43,7 +43,7 @@
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-32">Обхват талии</div>
                 {{#if user.Character.waist}}
-                    <div class="value f-white f-32">{{user.Character.waist}} см</div>
+                    <div class="value f-white f-32"><span class="value-digit">{{user.Character.waist}}</span> см</div>
                 {{else}}
                     <div class="value f-white f-32">Не указано</div>
                 {{/if}}
@@ -53,7 +53,7 @@
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-32">Обхват бедер</div>
                 {{#if user.Character.girth}}
-                    <div class="value f-white f-32">{{user.Character.girth}} см</div>
+                    <div class="value f-white f-32"><span class="value-digit">{{user.Character.girth}}</span> см</div>
                 {{else}}
                     <div class="value f-white f-32">Не указано</div>
                 {{/if}}
@@ -84,6 +84,15 @@
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
         </div>
     </div>
+</div>
+
+<div class="imageFormBox position-fixed animate__animated">
+    <span class="imageFormBox-close position-absolute">x</span>
+    <form action="/profile/edit-image" method="POST" enctype="multipart/form-data">
+        <label for="imageSelect">Выберите изображение</label>
+        <input type="file" name="imageSelect" id="imageSelect" multiple>
+        <button class="button" type="submit">Сохранить</button>
+    </form>
 </div>
 
 <div class="parallax d-sm-block d-none">

@@ -213,6 +213,7 @@ footer{
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
 }
 .mobile-box-img img{
     width: 100%;
@@ -248,7 +249,6 @@ footer{
 .mobile-box-before{
     width: 200px;
     height: 300px;
-    z-index: 50;
 }
 .blue-wrapper{
     width: 190px;
@@ -268,7 +268,6 @@ footer{
     position: relative;
     left: -46%;
     top: 6%;
-    z-index: 40;
 }
 .green-wrapper{
     width: 190px;
@@ -282,17 +281,52 @@ footer{
     left: -16px;
     border-radius: 25px;
 }
-.animation{
-    animation: shuffle 2s;
+.animation-top{
+    animation: shuffleTop 2s;
 }
-@keyframes shuffle {
+.animation-down{
+    animation: shuffleDown 2s;
+}
+@keyframes shuffleTop {
     0% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
     50%{
-        transform: translateX(80%);
+        transform: translateY(-150%);
     }
     100%{
-        transform: translateX(0);
+        transform: translateY(0);
     }
+}
+
+@keyframes shuffleDown {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.mobile-result-img-1 {
+    position: relative;
+    background: url('../images/trainer.png') no-repeat;
+    z-index: 2;
+}
+
+.mobile-result-img-1, .mobile-result-img-2 {
+    width: 180px;
+    height: 275px;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.mobile-result-img-2 {
+    background: #009900;
+    left: 20px;
+    top: 15px;
+    z-index: 1;
 }

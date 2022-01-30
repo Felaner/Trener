@@ -16,6 +16,10 @@ const user = sequelize.define('User', {
         allowNull: false,
         type: Sequelize.STRING
     },
+    secondName: {
+        allowNull: false,
+        type: Sequelize.STRING
+    },
     course: {
         allowNull: true,
         type: Sequelize.INTEGER
@@ -34,4 +38,40 @@ const user = sequelize.define('User', {
     }
 })
 
-module.exports = user
+const character = sequelize.define('Character', {
+    id: {
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    growth: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    weight: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    bust: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    waist: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    girth: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey : true
+    }
+})
+
+user.hasOne(character, {foreignKey : 'userId'});
+
+module.exports = { user, character }

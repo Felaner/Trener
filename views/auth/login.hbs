@@ -59,19 +59,23 @@
                         <form action="/auth/register" method="POST">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input id="remail" name="email" type="email" class="form-control" placeholder="Email" value="" required/>
+                                <input id="remail" name="email" type="email" class="form-control" placeholder="Введите email" value="" required/>
                             </div>
                             <div class="form-group">
                                 <label for="rpassword">Пароль *</label>
-                                <input id="rpassword" name="password" type="password" class="form-control" placeholder="Пароль" value="" required/>
+                                <input id="rpassword" name="password" type="password" class="form-control" placeholder="Введите пароль" value="" required/>
                             </div>
                             <div class="form-group">
                                 <label for="confirm">Повторите пароль *</label>
                                 <input id="confirm" name="confirm" type="password" class="form-control" placeholder="Повторите пароль" value="" required/>
                             </div>
                             <div class="form-group">
-                                <label for="name">Ваше имя *</label>
-                                <input id="name" name="name" type="text" class="form-control" placeholder="Имя" value="" required/>
+                                <label for="name">Имя *</label>
+                                <input id="name" name="name" type="text" class="form-control" placeholder="Введите имя" value="" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="secondName">Фамилия *</label>
+                                <input id="secondName" name="secondName" type="text" class="form-control" placeholder="Введите фамилию" value="" required/>
                             </div>
                             <div class="form-group">
                                 <input type="hidden" name="_csrf" value="{{csrf}}">

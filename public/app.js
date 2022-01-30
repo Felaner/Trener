@@ -13,31 +13,82 @@ $(function () {
     }
 });
 
-let clicks = 0
 $(".mobile-result-box").on("click", function () {
-    clicks++
-    if (clicks % 2 !== 0) {
-        $(this).find(".mobile-box-before").addClass('animation').css("zIndex", '50')
-        $(this).find(".mobile-box-after").removeClass('animation').css("zIndex", '40')
+    const before = $(this).find(".mobile-result-img-1"),
+        after = $(this).find(".mobile-result-img-2");
+    if (!after.hasClass('animation-down')) {
+        after.removeClass('animation-top').addClass('animation-down')
+        setTimeout(function () {
+            after.css('z-index', '2').css({'background': 'url("../images/trainer.png") no-repeat', 'background-size': 'contain'})
+        }, 1000)
+        before.removeClass('animation-down').addClass('animation-top')
+        setTimeout(function () {
+            before.css('z-index', '1').css('background', '#0653B6')
+        }, 1000)
     } else {
-        $(this).find(".mobile-box-before").removeClass('animation').css("zIndex", '40')
-        $(this).find(".mobile-box-after").addClass('animation').css("zIndex", '50')
+        before.removeClass('animation-top').addClass('animation-down')
+        setTimeout(function () {
+            before.css('z-index', '2').css({'background': 'url("../images/trainer.png") no-repeat', 'background-size': 'contain'})
+        }, 1000)
+        after.removeClass('animation-down').addClass('animation-top')
+        setTimeout(function () {
+            after.css('z-index', '1').css('background', '#009900')
+        }, 1000)
     }
 })
-// $(".mobile-result-box").on("click", function (){
-//     $(".mobile-box-before").animate({
-//         "z-index" : "5"
-//     }, 1000);
-//     $(".mobile-box-after").animate({
-//         "z-index" : "4"
-//     }, 1000);
-// })
 
-// const boxAnimate = document.querySelector('mobile-result-box');
-// const boxBefore = document.querySelector('mobile-box-before')
-// const boxAfter = document.querySelector('mobile-box-after')
-//
-// boxAnimate.addEventListener('click', event => {
-//     boxBefore.style.transform = 'translateX(50%)',
-//     boxBefore.style.zIndex = `30`;
-// });
+$(".edit-profile").on("click", function (el) {
+    const values = el.target.parentNode.parentNode.querySelectorAll('.value')
+    const inputs = el.target.parentNode.parentNode.querySelectorAll('input')
+    const saveBtn = el.target.parentNode.querySelector('.save-profile')
+    $(el.target).addClass('d-none')
+    values.forEach(el => {
+        $(el).addClass('d-none')
+    })
+    inputs.forEach(el => {
+        $(el).removeClass('d-none')
+    })
+    $(saveBtn).removeClass('d-none')
+})
+
+function saveProfile() {
+    const el = $('.save-profile')
+    const values = el.target.parentNode.parentNode.querySelectorAll('.value')
+    const inputs = el.target.parentNode.parentNode.querySelectorAll('input')
+    const saveBtn = el.target.parentNode.querySelector('.save-profile')
+    $(el.target).addClass('d-block')
+    values.forEach(el => {
+        $(el).addClass('d-block')
+    })
+    inputs.forEach(el => {
+        $(el).removeClass('d-block')
+    })
+    $(saveBtn).removeClass('d-block')
+}
+
+$(".save-profile").on("click", el => {
+    const values = el.target.parentNode.parentNode.querySelectorAll('input')
+    const characters = {}
+    values.forEach((el, i) => {
+        if (i !== 5) {
+            characters[i] = el.value
+        }
+    })
+    console.log(characters)
+    $.ajax({
+        type: 'POST',
+        url: '/profile',
+        data: characters,
+        error: function(jqXHR, textStatus, err) {
+            console.log('error: ' + err)
+        },
+        beforeSend: function() {
+            console.log('loading')
+        },
+        success: function(data) {
+            console.log('OK')
+            saveProfile()
+        }
+    })
+    return false;
+})

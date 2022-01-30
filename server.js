@@ -22,6 +22,7 @@ const profileRoutes = require('./routes/profile');
 
 const varMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user');
+const fileMiddleware = require('./middleware/file')
 
 const keys = require('./keys');
 
@@ -71,6 +72,10 @@ app.use(session({
         maxAge: 10 * 60 * 1000
     }
 }));
+
+app.use(fileMiddleware.fields([
+    { name: 'imageSelect', maxCount: 2 }
+]));
 
 app.use(userMiddleware);
 app.use(varMiddleware);

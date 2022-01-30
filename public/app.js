@@ -37,34 +37,68 @@ $(".mobile-result-box").on("click", function () {
     }
 })
 
-$(".edit-profile").on("click", function (el) {
-    const values = el.target.parentNode.parentNode.querySelectorAll('.value')
-    const inputs = el.target.parentNode.parentNode.querySelectorAll('input')
-    const saveBtn = el.target.parentNode.querySelector('.save-profile')
-    $(el.target).addClass('d-none')
+function editProfile(el) {
+    const values = el.parentNode.parentNode.querySelectorAll('.value')
+    const inputs = el.parentNode.parentNode.querySelectorAll('input')
+    const saveBtn = el.parentNode.querySelector('.save-profile')
+    $(el).removeClass('d-block').addClass('d-none')
     values.forEach(el => {
-        $(el).addClass('d-none')
+        $(el).removeClass('d-block').addClass('d-none')
     })
     inputs.forEach(el => {
-        $(el).removeClass('d-none')
+        $(el).removeClass('d-none').addClass('d-block')
     })
-    $(saveBtn).removeClass('d-none')
+    $(saveBtn).removeClass('d-none').addClass('d-block')
+    return true
+}
+
+function saveProfile(el, data) {
+    const values = el.parentNode.parentNode.querySelectorAll('.value')
+    const inputs = el.parentNode.parentNode.querySelectorAll('input')
+    const editBtn = el.parentNode.querySelector('.edit-profile')
+    $(el).removeClass('d-block').addClass('d-none')
+    let i = 0
+    values.forEach(el => {
+        $(el).removeClass('d-none').addClass('d-block')
+        el.querySelector('span').innerHTML = data[i]
+        i++
+    })
+    inputs.forEach(el => {
+        $(el).removeClass('d-block').addClass('d-none')
+    })
+    $(editBtn).removeClass('d-none').addClass('d-block')
+    return true
+}
+
+$(".edit-profile").on("click", function (el) {
+    const btn = el.target
+    editProfile(btn)
+});
+
+$('.edit-profile-img').on('click', function (el) {
+    const imageFormBox = $('.imageFormBox')
+    if (!imageFormBox.hasClass('animate__fadeInLeft')) {
+        imageFormBox.removeClass('animate__fadeOutRight').css({'display': 'block'}).addClass('animate__fadeInLeft')
+        console.log('ok')
+    } else {
+        imageFormBox.removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight')
+        setTimeout(function () {
+            imageFormBox.css({'display': 'none'})
+        }, 550)
+    }
 })
 
-function saveProfile() {
-    const el = $('.save-profile')
-    const values = el.target.parentNode.parentNode.querySelectorAll('.value')
-    const inputs = el.target.parentNode.parentNode.querySelectorAll('input')
-    const saveBtn = el.target.parentNode.querySelector('.save-profile')
-    $(el.target).addClass('d-block')
-    values.forEach(el => {
-        $(el).addClass('d-block')
-    })
-    inputs.forEach(el => {
-        $(el).removeClass('d-block')
-    })
-    $(saveBtn).removeClass('d-block')
-}
+$('.imageFormBox-close').on('click', function (el) {
+    const imageFormBox = $('.imageFormBox')
+    if (!imageFormBox.hasClass('animate__fadeInLeft')) {
+        imageFormBox.removeClass('animate__fadeOutRight').css({'display': 'block'}).addClass('animate__fadeInLeft')
+    } else {
+        imageFormBox.removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight')
+        setTimeout(function () {
+            imageFormBox.css({'display': 'none'})
+        }, 550)
+    }
+})
 
 $(".save-profile").on("click", el => {
     const values = el.target.parentNode.parentNode.querySelectorAll('input')
@@ -86,8 +120,7 @@ $(".save-profile").on("click", el => {
             console.log('loading')
         },
         success: function(data) {
-            console.log('OK')
-            saveProfile()
+            saveProfile(el.target, characters)
         }
     })
     return false;

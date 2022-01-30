@@ -22,6 +22,23 @@
     width: auto;
     padding: 0 20px;
 }
+
+.mobile-characters {
+    padding: 0 20px;
+    max-height: 0;
+    transition: max-height 1.5s ease-in-out;
+    overflow: hidden;
+}
+
+.mobile-characters.open {
+    max-height: 3000px;
+    transition: max-height 1.5s ease-in-out;
+}
+
+.mobile-characters button {
+
+}
+
 .progress{
     height: 40px;
 }

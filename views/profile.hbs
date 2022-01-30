@@ -116,14 +116,73 @@
         <div class="col-12 f-white text-center f-18 font-weight-bold mt-5">Личный кабинет</div>
         <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="images/trainer.png" alt=""></div>
         <div class="col-12 text-center f-16 f-white mt-3">Имя Фамилия</div>
-        <div class="col-12 d-flex justify-content-center mt-3"><button class="mobile-button-parameters f-white f-16">Парметры</button></div>
-        <div class="col-12 text-center f-16 f-white mt-3">Уровень сложности: новичек</div>
+        <div class="col-12 d-flex justify-content-center mt-3">
+            <button class="mobile-button-parameters f-white f-16">Параметры</button>
+        </div>
+        <div class="mobile-characters">
+            <div class="parameter-wrapper d-flex justify-content-between">
+                <div class="parameter f-white f-16">Рост</div>
+                {{#if user.Character.growth}}
+                    <div class="value f-white f-16"><span class="value-digit">{{user.Character.growth}}</span> см</div>
+                {{else}}
+                    <div class="value f-white f-16">Не указано</div>
+                {{/if}}
+                <input class="d-none" name="growth" id="growth" type="number" value="{{user.Character.growth}}">
+            </div>
+            <div class="divider mb-3"></div>
+            <div class="parameter-wrapper d-flex justify-content-between">
+                <div class="parameter f-white f-16">Вес</div>
+                {{#if user.Character.weight}}
+                    <div class="value f-white f-16"><span class="value-digit">{{user.Character.weight}}</span> кг</div>
+                {{else}}
+                    <div class="value f-white f-16">Не указано</div>
+                {{/if}}
+                <input class="d-none" name="weight" id="weight" type="number" value="{{user.Character.weight}}">
+            </div>
+            <div class="divider mb-3"></div>
+            <div class="parameter-wrapper d-flex justify-content-between">
+                <div class="parameter f-white f-16">Обхват груди</div>
+                {{#if user.Character.bust}}
+                    <div class="value f-white f-16"><span class="value-digit">{{user.Character.bust}}</span> см</div>
+                {{else}}
+                    <div class="value f-white f-16">Не указано</div>
+                {{/if}}
+                <input class="d-none" name="bust" id="bust" type="number" value="{{user.Character.bust}}">
+            </div>
+            <div class="divider mb-3"></div>
+            <div class="parameter-wrapper d-flex justify-content-between">
+                <div class="parameter f-white f-16">Обхват талии</div>
+                {{#if user.Character.waist}}
+                    <div class="value f-white f-16"><span class="value-digit">{{user.Character.waist}}</span> см</div>
+                {{else}}
+                    <div class="value f-white f-16">Не указано</div>
+                {{/if}}
+                <input class="d-none" name="waist" id="waist" type="number" value="{{user.Character.waist}}">
+            </div>
+            <div class="divider mb-3"></div>
+            <div class="parameter-wrapper d-flex justify-content-between">
+                <div class="parameter f-white f-16">Обхват бедер</div>
+                {{#if user.Character.girth}}
+                    <div class="value f-white f-16"><span class="value-digit">{{user.Character.girth}}</span> см</div>
+                {{else}}
+                    <div class="value f-white f-16">Не указано</div>
+                {{/if}}
+                <input class="d-none" name="girth" id="girth" type="number" value="{{user.Character.girth}}">
+            </div>
+            <div class="divider mb-3"></div>
+            <div class="row justify-content-around">
+                <button class="button edit-profile-img">Изменить фото</button>
+                <button class="button edit-profile">Редактировать профиль</button>
+                <button class="button save-profile d-none">Сохранить изменения</button>
+            </div>
+        </div>
+        <div class="col-12 text-center f-16 f-white mt-3">Уровень сложности: новичок</div>
         <div class="col-12 text-center f-16 f-white mt-3">Дата: 12.12.2021/12.12.2022</div>
     </div>
 </div>
 
 <div class="parallax d-sm-none d-block">
-    <div class="f-white f-18 text-center mt-2 font-weight-bold">Результаты подсписчиков</div>
+    <div class="f-white f-18 text-center mt-2 font-weight-bold">Видео тренировки</div>
 </div>
 
 <div class="container d-sm-none d-block">

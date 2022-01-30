@@ -100,6 +100,15 @@ $('.imageFormBox-close').on('click', function (el) {
     }
 })
 
+$('.mobile-button-parameters').on('click', function(el) {
+    const characterMobile = el.target.parentNode.parentNode.querySelector('.mobile-characters')
+    if ($(characterMobile).hasClass('open')) {
+        $(characterMobile).removeClass('open')
+    } else {
+        $(characterMobile).addClass('open')
+    }
+});
+
 $(".save-profile").on("click", el => {
     const values = el.target.parentNode.parentNode.querySelectorAll('input')
     const characters = {}

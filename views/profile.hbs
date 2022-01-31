@@ -97,6 +97,13 @@
         <input class="mb-4 text-center" type="file" name="imageSelect" id="imageSelect" multiple>
         <button class="button" type="submit">Сохранить</button>
     </form>
+    <div class="form-group">
+        <input type="file" name="file" id="file" class="input-file">
+        <label for="file" class="btn btn-tertiary js-labelFile">
+            <i class="icon fa fa-check"></i>
+            <span class="js-fileName">Загрузить файл</span>
+        </label>
+    </div>
 </div>
 
 {{#if user.course}}

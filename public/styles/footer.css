@@ -1,3 +1,11 @@
+.main-footer-link{
+    color: #ffffff;
+    text-decoration: none;
+}
+.main-footer-link:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
 .mobile-footer{
     width: 100%;
     min-height: 102px;

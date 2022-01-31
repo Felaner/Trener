@@ -10,6 +10,9 @@
     background: #0653b6;
     border-radius: 50px;
 }
+.nav-tabs{
+    z-index: 200;
+}
 
 .nav-tabs .nav-link {
     color: #ffffff;
@@ -19,11 +22,6 @@
     margin-top: 5%;
     margin-bottom: 5%;
 }
-
-.tab-pane form {
-    padding: 10%;
-}
-
 .login-form {
     padding: 5%;
 }

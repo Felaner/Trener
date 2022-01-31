@@ -9,6 +9,21 @@
         width: 235px;
         height: 235px;
     }
+    .edit-profile{
+        width: 220px;
+        padding: 0 10px;
+        font-size: 16px;
+    }
+    .edit-profile-img{
+        width: 220px;
+        padding: 0 10px;
+        font-size: 16px;
+    }
+    .save-profile{
+        width: 220px;
+        padding: 0 10px;
+        font-size: 16px;
+    }
 
 }
 
@@ -30,6 +45,12 @@
     }
     #carousel2 .carousel-item {
         height: 580px;
+    }
+    .button:hover{
+        background-color: #0653b6;
+        color: #ffffff;
+        box-shadow: none;
+        text-decoration: none;
     }
 }
 

@@ -65,7 +65,7 @@
                 <button class="button edit-profile">Редактировать профиль</button>
                 <button class="button save-profile d-none">Сохранить изменения</button>
             </div>
-            <div class="profile-status mt-5">
+            <div class="profile-status mt-5 d-none">
                 <div class="parameter-wrapper d-flex justify-content-between">
                     <div class="parameter f-white f-32">Уровень сложности:</div>
                     <div class="f-white f-32">новичок</div>
@@ -87,10 +87,10 @@
 </div>
 
 <div class="imageFormBox position-fixed animate__animated">
-    <span class="imageFormBox-close position-absolute">x</span>
-    <form action="/profile/edit-image" method="POST" enctype="multipart/form-data">
-        <label for="imageSelect">Выберите изображение</label>
-        <input type="file" name="imageSelect" id="imageSelect" multiple>
+    <span class="imageFormBox-close">x</span>
+    <form class="d-flex flex-column align-items-center" action="/profile/edit-image" method="POST" enctype="multipart/form-data">
+        <label class="mb-5" for="imageSelect">Выберите изображение</label>
+        <input class="mb-5 text-center" type="file" name="imageSelect" id="imageSelect" multiple>
         <button class="button" type="submit">Сохранить</button>
     </form>
 </div>
@@ -115,11 +115,11 @@
     <div class="row">
         <div class="col-12 f-white text-center f-18 font-weight-bold mt-5">Личный кабинет</div>
         <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/avatars/chooseImage.png{{/if}}" alt="avatar"></div>
-        <div class="col-12 text-center f-16 f-white mt-3">{{user.name}} {{user.secondName}}</div>
+        <div class="col-12 text-center f-18 f-white mt-3">{{user.name}} {{user.secondName}}</div>
         <div class="col-12 d-flex justify-content-center mt-3">
             <button class="mobile-button-parameters f-white f-16">Параметры</button>
         </div>
-        <div class="mobile-characters">
+        <div class="mobile-characters col-12">
             <div class="parameter-wrapper d-flex justify-content-between">
                 <div class="parameter f-white f-16">Рост</div>
                 {{#if user.Character.growth}}
@@ -171,13 +171,13 @@
             </div>
             <div class="divider mb-3"></div>
             <div class="row justify-content-around">
-                <button class="button edit-profile-img">Изменить фото</button>
-                <button class="button edit-profile">Редактировать профиль</button>
-                <button class="button save-profile d-none">Сохранить изменения</button>
+                <button class="button edit-profile-img mb-3">Изменить фото</button>
+                <button class="button edit-profile mb-3">Редактировать профиль</button>
+                <button class="button save-profile d-none mb-3">Сохранить изменения</button>
             </div>
         </div>
-        <div class="col-12 text-center f-16 f-white mt-3">Уровень сложности: новичок</div>
-        <div class="col-12 text-center f-16 f-white mt-3">Дата: 12.12.2021/12.12.2022</div>
+        <div class="col-12 text-center f-16 f-white mt-3 d-none">Уровень сложности: новичок</div>
+        <div class="col-12 text-center f-16 f-white mt-3 d-none">Дата: 12.12.2021/12.12.2022</div>
     </div>
 </div>
 

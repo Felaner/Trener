@@ -29,6 +29,14 @@ input[type=number]::-webkit-outer-spin-button {
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
+.imageFormBox-close{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .profile-status{
     background: #005cbf;
     width: 100%;

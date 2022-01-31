@@ -105,7 +105,9 @@
 }
 
 @media (max-width: 575px) {
-
+    body {
+        min-height: calc(100vh - 102px);
+    }
 }
 
 @media (max-width: 380px) {

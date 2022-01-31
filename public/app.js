@@ -148,12 +148,12 @@ $(".save-profile").on("click", el => {
     'use strict';
 
     $('.input-file').each(function() {
-        var $input = $(this),
+        let $input = $(this),
             $label = $input.next('.js-labelFile'),
             labelVal = $label.html();
 
         $input.on('change', function(element) {
-            var fileName = '';
+            let fileName = '';
             if (element.target.value) fileName = element.target.value.split('\\').pop();
             fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
         });
@@ -161,17 +161,21 @@ $(".save-profile").on("click", el => {
 
 })();
 
-const anchors = document.querySelectorAll('a[href*="#"]')
-
-for (let anchor of anchors) {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault()
-
-        const blockID = anchor.getAttribute('href').substr(1)
-
-        document.getElementById(blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-    })
-}
+$(function(){
+    $('.who-i').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('#scrollPointWhoI').offset().top }, 1000);
+        e.preventDefault();
+    });
+    $('.results').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('#scrollPointResults').offset().top }, 1000);
+        e.preventDefault();
+    });
+    // $('.who-i-mobile').on('click', function(e){
+    //     $('html,body').stop().animate({ scrollTop: $('#mobileScrollPointWhoI').offset().top }, 1000);
+    //     e.preventDefault();
+    // });
+    // $('.results-mobile').on('click', function(e){
+    //     $('html,body').stop().animate({ scrollTop: $('#mPointResults').offset().top }, 1000);
+    //     e.preventDefault();
+    // });
+});

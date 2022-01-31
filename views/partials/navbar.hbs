@@ -8,8 +8,8 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav d-flex justify-content-between">
                     <a class="nav-link mr-2" href="/">Главная</a>
-                    <a class="nav-link mr-2" href="#about">Кто я?</a>
-                    <a class="nav-link mr-2" href="#results">Результаты клиентов</a>
+                    <a class="nav-link mr-2 who-i" href="#about">Кто я?</a>
+                    <a class="nav-link mr-2 results" href="#results">Результаты клиентов</a>
                     {{#unless isAuth}}
                         <a class="nav-link" href="/auth/login#login">Авторизация</a>
                     {{/unless}}
@@ -42,8 +42,8 @@
             </div>
             <div class="mobile-navbar-nav d-flex flex-column justify-content-around">
                 <a class="mobile-nav-link d-flex align-items-center" href="/">Главная</a>
-                <a class="mobile-nav-link d-flex align-items-center" href="#aboutMobile">Кто я?</a>
-                <a class="mobile-nav-link d-flex align-items-center" href="#resultsMobile">Результаты клиентов</a>
+                <a class="mobile-nav-link d-flex align-items-center who-i" href="#aboutMobile">Кто я?</a>
+                <a class="mobile-nav-link d-flex align-items-center results" href="#resultsMobile">Результаты клиентов</a>
                 {{#unless isAuth}}
                     <a class="mobile-nav-link d-flex align-items-center" href="/auth/login#login">Авторизация</a>
                 {{/unless}}

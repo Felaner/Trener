@@ -93,17 +93,13 @@
 <div class="imageFormBox position-fixed animate__animated">
     <span class="imageFormBox-close">x</span>
     <form class="d-flex flex-column align-items-center" action="/profile/edit-image" method="POST" enctype="multipart/form-data">
-        <label class="mb-3 f-20" for="imageSelect">Выберите изображение</label>
-        <input class="mb-4 text-center" type="file" name="imageSelect" id="imageSelect" multiple>
-        <button class="button" type="submit">Сохранить</button>
-    </form>
-    <div class="form-group">
-        <input type="file" name="file" id="file" class="input-file">
-        <label for="file" class="btn btn-tertiary js-labelFile">
+        <input type="file" name="imageSelect" id="imageSelect" class="input-file" multiple>
+        <label for="imageSelect" class="btn btn-tertiary js-labelFile mt-4 w-75">
             <i class="icon fa fa-check"></i>
-            <span class="js-fileName">Загрузить файл</span>
+            <span class="js-fileName">Загрузить изображение</span>
         </label>
-    </div>
+        <button class="button mt-3 w-75" type="submit">Сохранить</button>
+    </form>
 </div>
 
 {{#if user.course}}

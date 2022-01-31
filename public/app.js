@@ -23,7 +23,7 @@ $(".mobile-result-box").on("click", function () {
         }, 1000)
         before.removeClass('animation-down').addClass('animation-top')
         setTimeout(function () {
-            before.css('z-index', '1').css('background', '#0653B6')
+            before.css('z-index', '1').css('background', '#009900')
         }, 1000)
     } else {
         before.removeClass('animation-top').addClass('animation-down')
@@ -32,7 +32,7 @@ $(".mobile-result-box").on("click", function () {
         }, 1000)
         after.removeClass('animation-down').addClass('animation-top')
         setTimeout(function () {
-            after.css('z-index', '1').css('background', '#009900')
+            after.css('z-index', '1').css('background', '#0653B6')
         }, 1000)
     }
 })

@@ -338,8 +338,41 @@ footer{
 }
 
 .mobile-result-img-2 {
-    background: #009900;
+    background: #0653B6;
     left: 20px;
     top: 15px;
     z-index: 1;
+}
+
+.mobile-box-before .text-before, .mobile-box-before .text-after {
+    position: absolute;
+    width: 100%;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.mobile-box-before .text-before {
+    bottom: -25px;
+}
+
+.mobile-box-before .text-after {
+    top: -20px;
+}
+
+.click-image {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+
+button:focus {
+    outline: none;
+}
+
+a.mobile-button {
+    padding: 4px;
+    text-align: center;
+    font-size: 16px;
 }

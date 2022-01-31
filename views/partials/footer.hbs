@@ -1,37 +1,48 @@
-
-
-<!--<footer>-->
-
-<!--    <nav class="navbar navbar-dark navbar-expand-lg">-->
-<!--        <div class="container pb-3 pt-3">-->
-<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">-->
-<!--                <div class="navbar-nav">-->
-<!--                    <a class="nav-link mr-2" href="/">Главная</a>-->
-<!--                    <a class="nav-link mr-2" href="#">Обо мне</a>-->
-<!--                    <a class="nav-link mr-2" href="#">Блог</a>-->
-<!--                    {{#unless isAuth}}-->
-<!--                        <a class="nav-link" href="/auth/login#login">Авторизация</a>-->
-<!--                    {{/unless}}-->
-<!--                    {{#if isAuth}}-->
-<!--                        <a class="nav-link mr-2" href="/profile">Личный кабинет</a>-->
-<!--                        <a class="nav-link" href="/auth/logout">Выйти</a>-->
-<!--                    {{/if}}-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </nav>-->
-
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-12 d-flex flex-column justify-content-center align-items-center">-->
-<!--                <p class="f-32 f-white">Все права защищены</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</footer>-->
+<div class="container-fluid contacts pb-3 pt-3 d-none d-sm-block">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12"><h2 class="text-center f-40 f-white">Контакты</h2></div>
+            <div class="col-xl-4 col-12 mt-xl-0 mt-sm-3">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href=""><img class="mr-3" src="/images/icons/phone.svg" alt="">8-956-765-73-90</a>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center mt-3">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href=""><img class="mr-3" src="/images/icons/phone.svg" alt="">8-956-765-73-90</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 mt-xl-0 mt-sm-3 d-flex justify-lg-content-around justify-content-sm-center align-items-center pl-5 pr-5">
+                <a class="mr-lg-3 mr-sm-3" href="">
+                    <img src="/images/icons/whatsup.svg" alt="">
+                </a>
+                <a class="ml-lg-3 ml-sm-3" href="">
+                    <img src="/images/icons/telegram.svg" alt="">
+                </a>
+            </div>
+            <div class="col-xl-4 col-sm-12 mt-xl-0 mt-sm-3">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-6 contacts-mail d-flex align-items-center">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href="">
+                            <img src="/images/icons/mail.svg" alt="">email@example.com
+                        </a>
+                    </div>
+                    <div class="col-xl-12 col-lg-6 contacts-phone d-flex align-items-center mt-3">
+                        <a class="f-32 mx-xl-0 mx-sm-auto" href="">
+                            <img src="/images/icons/mail.svg" alt="">email@example.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 f-32 f-white contacts-inst d-flex justify-content-center align-items-center mt-3">
+                <p class="m-0 p-0 h-100">Мой аккаунт в Instagram</p>
+                <a class="ml-3" href="">
+                    <img class="mr-2" src="/images/icons/inst.svg" alt="">@inst-name
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--Мобильный футер-->
 <footer class="mobile-footer d-sm-none d-block">
@@ -39,15 +50,15 @@
         <div class="row align-items-center">
             <div class="col-12 f-white f-16 text-center font-weight-bold mt-1">Контакты</div>
             <a href="#" class="col-4 mt-2 footer-inst-link d-flex flex-column align-items-center f-12 f-white font-weight-bold">
-                <img class="w-50" src="images/icons/nav-inst.svg" alt="">
+                <img class="w-50" src="/images/icons/nav-inst.svg" alt="">
                 @inst_name
             </a>
             <a href="#" class="col-4 mt-2 footer-inst-link d-flex flex-column align-items-center f-12 f-white font-weight-bold">
-                <img class="w-50" src="images/icons/nav-whatsup.svg" alt="">
+                <img class="w-50" src="/images/icons/nav-whatsup.svg" alt="">
                 8-956-765-73-90
             </a>
             <a href="#" class="col-4 mt-2 footer-inst-link d-flex flex-column align-items-center justify-content-between f-12 f-white font-weight-bold">
-                <img class="w-50" src="images/icons/nav-mail.svg" alt="">
+                <img class="w-50" src="/images/icons/nav-mail.svg" alt="">
                 email@example.ru
             </a>
         </div>

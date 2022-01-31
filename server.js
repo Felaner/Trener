@@ -82,7 +82,7 @@ app.use(varMiddleware);
 
 app.use('/', homeRoute);
 app.use('/auth', authRoutes);
-app.use('/profile' ,profileRoutes);
+app.use('/profile', profileRoutes);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

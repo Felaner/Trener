@@ -8,13 +8,15 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav d-flex justify-content-between">
                     <a class="nav-link mr-2" href="/">Главная</a>
-                    <a class="nav-link mr-2 who-i" href="#about">Кто я?</a>
-                    <a class="nav-link mr-2 results" href="#results">Результаты клиентов</a>
+                    <a class="nav-link mr-2 who-i-href" href="/#scrollPointWhoI">Кто я?</a>
+                    <a class="nav-link mr-2 results-href" href="/#scrollPointResults">Результаты клиентов</a>
                     {{#unless isAuth}}
                         <a class="nav-link" href="/auth/login#login">Авторизация</a>
                     {{/unless}}
                     {{#if isAuth}}
+                        {{#unless isProfile}}
                         <a class="nav-link mr-2" href="/profile">Личный кабинет</a>
+                        {{/unless}}
                         <a class="nav-link" href="/auth/logout">Выйти</a>
                     {{/if}}
                 </div>
@@ -22,33 +24,52 @@
     </div>
 </nav>
 
-<nav class="mobile-nav d-sm-none d-flex mt-3">
+<nav class="mobile-nav d-sm-none d-flex">
     <div class="container-fluid mobile-nav-wrapper">
-        <div class="mobile-nav-buttons d-flex justify-content-between">
+        <div class="mobile-nav-buttons d-flex justify-content-between align-items-center h-100">
             <button class="navbar-toggler mobile-navbar-toggler d-flex flex-column justify-content-around" type="button" data-toggle="collapse" data-target="#mobileNavbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
                 <span class="mobile-hamburger-top"></span>
                 <span class="mobile-hamburger-bottom"></span>
             </button>
+            {{#unless isProfile}}
             <a href="/profile">
-                <img class="main-profile-link" src="/images/icons/personcircle.svg" alt="">
+                <img class="main-profile-link" src="
+                    {{#if isAuth}}
+                        {{#if user.Character.image}}
+                            {{user.Character.image}}
+                        {{else}}
+                        /images/icons/personcircle.svg
+                        {{/if}}
+                    {{else}}
+                        /images/icons/personcircle.svg
+                    {{/if}}
+                " alt="avatar">
             </a>
+            {{/unless}}
         </div>
         <div class="collapse mobile-navbar-collapse justify-content-center" id="mobileNavbarNavAltMarkup">
             <div class="mobile-navbar-profile d-flex justify-content-center">
-                <a class="d-flex flex-column justify-content-around" href="#">
-                    <img class="mobile-navbar-profile-icon" src="/images/icons/personcircle.svg" alt="">
-                    <div class="mobile-navbar-profile-title">Личный кабинет</div>
+                <a class="d-flex flex-column justify-content-around align-items-center" href="/profile">
+                    <span class="mobile-navbar-image">
+                        <img src="
+                        {{#if isAuth}}
+                            {{#if user.Character.image}}
+                                {{user.Character.image}}
+                            {{else}}
+                                /images/icons/personcircle.svg
+                            {{/if}}
+                        {{else}}
+                            /images/icons/personcircle.svg
+                        {{/if}}" alt="avatar">
+                    </span>
+                    <div class="mobile-navbar-profile-title">{{#if isAuth}}Личный кабинет{{else}}Войти{{/if}}</div>
                 </a>
             </div>
             <div class="mobile-navbar-nav d-flex flex-column justify-content-around">
                 <a class="mobile-nav-link d-flex align-items-center" href="/">Главная</a>
-                <a class="mobile-nav-link d-flex align-items-center who-i" href="#aboutMobile">Кто я?</a>
-                <a class="mobile-nav-link d-flex align-items-center results" href="#resultsMobile">Результаты клиентов</a>
-                {{#unless isAuth}}
-                    <a class="mobile-nav-link d-flex align-items-center" href="/auth/login#login">Авторизация</a>
-                {{/unless}}
+                <a class="mobile-nav-link d-flex align-items-center who-i-mobile-href" href="/#mobileScrollPointWhoI" data-toggle="collapse" data-target="#mobileNavbarNavAltMarkup" aria-controls="navbarNavAltMarkup">Кто я?</a>
+                <a class="mobile-nav-link d-flex align-items-center results-mobile-href" href="/#mobileScrollPointResults" data-toggle="collapse" data-target="#mobileNavbarNavAltMarkup" aria-controls="navbarNavAltMarkup">Результаты клиентов</a>
                 {{#if isAuth}}
-                    <a class="mobile-nav-link d-flex align-items-center" href="/profile">Личный кабинет</a>
                     <a class="mobile-nav-link d-flex align-items-center" href="/auth/logout">Выйти</a>
                 {{/if}}
             </div>

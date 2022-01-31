@@ -23,25 +23,30 @@ nav .nav-link:hover {
 
 .mobile-nav{
     width: 100%;
-    background: transparent;
+    min-height: 45px;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 100;
 }
 
 .main-profile-link{
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     z-index: 97;
     position: relative;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .mobile-navbar-collapse{
     background: linear-gradient(180deg, #29323C 0%, #485461 100%);
     border-radius: 5px;
     position: absolute;
-    width: calc(100% - 30px);
+    width: 100%;
     top: 0;
     z-index: 98;
     padding-top: 15px;
+    margin-left: -15px;
 }
 
 .mobile-navbar-toggler{
@@ -101,4 +106,17 @@ nav .nav-link:hover {
     box-shadow: inset 0px 0px 9px 4px #2A333D;
     border-radius: 10px 10px 0px 0px;
     padding: 10px;
+}
+
+.mobile-navbar-image {
+    width: 56px;
+    height: 56px;
+}
+
+.mobile-navbar-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+    object-position: top;
 }

@@ -67,8 +67,7 @@ const character = sequelize.define('Character', {
     },
     image: {
         allowNull: true,
-        type: Sequelize.STRING,
-        defaultValue: '/images/avatars/chooseImage.png'
+        type: Sequelize.STRING
     },
     userId: {
         type: Sequelize.INTEGER,

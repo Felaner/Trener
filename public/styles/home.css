@@ -376,7 +376,3 @@ a.mobile-button {
     text-align: center;
     font-size: 16px;
 }
-
-body {
-    min-height: calc(100vh - 300px);
-}

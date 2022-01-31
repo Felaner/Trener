@@ -1,3 +1,5 @@
+'use strict'
+
 $(function () {
     if(window.location.hash === '#register') {
         $('#login-tab').removeClass('active')
@@ -143,10 +145,7 @@ $(".save-profile").on("click", el => {
     }
 })
 
-(function() {
-
-    'use strict';
-
+$(function(){
     $('.input-file').each(function() {
         let $input = $(this),
             $label = $input.next('.js-labelFile'),
@@ -159,15 +158,20 @@ $(".save-profile").on("click", el => {
         });
     });
 
-})();
-
-$(function(){
-    $('.who-i').on('click', function(e){
+    $('.who-i-href').on('click', function(e){
         $('html,body').stop().animate({ scrollTop: $('#scrollPointWhoI').offset().top }, 1000);
         e.preventDefault();
     });
-    $('.results').on('click', function(e){
+    $('.results-href').on('click', function(e){
         $('html,body').stop().animate({ scrollTop: $('#scrollPointResults').offset().top }, 1000);
+        e.preventDefault();
+    });
+    $('.who-i-mobile-href').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('#mobileScrollPointWhoI').offset().top }, 1000);
+        e.preventDefault();
+    });
+    $('.results-mobile-href').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('#mobileScrollPointResults').offset().top }, 1000);
         e.preventDefault();
     });
     // $('.who-i-mobile').on('click', function(e){

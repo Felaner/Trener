@@ -18,6 +18,9 @@
                         <a class="nav-link mr-2" href="/profile">Личный кабинет</a>
                         {{/unless}}
                         <a class="nav-link" href="/auth/logout">Выйти</a>
+                        {{#if user.isAdmin}}
+                            <a class="nav-link mr-2" href="/admin">Панель управления</a>
+                        {{/if}}
                     {{/if}}
                 </div>
             </div>

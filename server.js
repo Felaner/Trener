@@ -20,6 +20,8 @@ const homeRoute = require('./routes/home');
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 
+const adminRoutes = require('./routes/admin');
+
 const varMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user');
 const fileMiddleware = require('./middleware/file')
@@ -84,6 +86,8 @@ app.use(varMiddleware);
 app.use('/', homeRoute);
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+
+app.use('/admin', adminRoutes);
 
 app.use(errorHandler)
 

@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container profile">
     <div class="row d-sm-flex d-none">
         <div class="col-12 f-white text-center f-32 font-weight-bold mt-5 mb-5">Личный кабинет</div>
         <div class="col-xl-4 col-lg-5 col-12 mb-lg-0 mb-3">
             <div class="box mx-sm-auto mb-sm-3">
-                <div class="f-white ml-3 f-32">{{user.name}} {{user.secondName}}</div>
+                <div class="f-white ml-3 f-32 profile-name">{{user.name}}</div>
+                <input class="d-none f-32 w-100" name="profileName" id="profileName" type="text" value="{{user.name}}">
                 <div class="box-images">
                     <img src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/icons/PCperson.svg{{/if}}" alt="avatar">
                 </div>
@@ -90,10 +91,14 @@
 <!--    </div>-->
 </div>
 
+<div class="add-success position-fixed animate__animated">
+
+</div>
+
 <div class="imageFormBox position-fixed animate__animated">
     <span class="imageFormBox-close">x</span>
-    <form class="d-flex flex-column align-items-center" action="/profile/edit-image" method="POST" enctype="multipart/form-data">
-        <input type="file" name="imageSelect" id="imageSelect" class="input-file" multiple>
+    <form id="imageUpload" class="d-flex flex-column align-items-center" action="/profile/edit-image" method="POST" enctype="multipart/form-data">
+        <input type="file" name="imageSelect" id="imageSelect" class="input-file">
         <label for="imageSelect" class="btn btn-tertiary js-labelFile mt-4 w-75">
             <i class="icon fa fa-check"></i>
             <span class="js-fileName">Загрузить изображение</span>
@@ -124,7 +129,8 @@
     <div class="row">
         <div class="col-12 f-white text-center f-18 font-weight-bold mt-5">Личный кабинет</div>
         <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/icons/personcircle.svg{{/if}}" alt="avatar"></div>
-        <div class="col-12 text-center f-18 f-white mt-3">{{user.name}} {{user.secondName}}</div>
+        <div class="col-12 text-center f-18 f-white mt-3 profile-name">{{user.name}}</div>
+        <input class="d-none mx-auto mt-3" name="profileName" id="profileName" type="text" value="{{user.name}}">
         <div class="col-12 d-flex justify-content-center mt-3">
             <button class="mobile-button-parameters f-white f-16">Параметры</button>
         </div>

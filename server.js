@@ -23,6 +23,7 @@ const profileRoutes = require('./routes/profile');
 const varMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user');
 const fileMiddleware = require('./middleware/file')
+const errorHandler = require('./middleware/error');
 
 const keys = require('./keys');
 
@@ -83,6 +84,8 @@ app.use(varMiddleware);
 app.use('/', homeRoute);
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+
+app.use(errorHandler)
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

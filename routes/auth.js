@@ -60,7 +60,7 @@ router.post('/login', loginValidators, async (req, res) => {
 
 router.post('/register', registerValidators, async (req, res, next) => {
     try {
-        const {email, password, name, secondName} = req.body;
+        const {email, password, name} = req.body;
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             req.flash('registerError', errors.array()[0].msg);
@@ -70,7 +70,6 @@ router.post('/register', registerValidators, async (req, res, next) => {
         await User.create({
             email,
             name,
-            secondName,
             password: hashPassword
         })
         const message = {

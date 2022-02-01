@@ -42,14 +42,20 @@ $(".mobile-result-box").on("click", function () {
 function editProfile(el) {
     const values = el.parentNode.parentNode.querySelectorAll('.value')
     const inputs = el.parentNode.parentNode.querySelectorAll('input')
+    const profileNameInput = el.parentNode.parentNode.parentNode.querySelector('#profileName')
     const saveBtn = el.parentNode.querySelector('.save-profile')
+    const imgBtn = el.parentNode.querySelector('.edit-profile-img')
+    const profileName = el.parentNode.parentNode.parentNode.querySelector('.profile-name')
     $(el).removeClass('d-block').addClass('d-none')
+    $(profileName).removeClass('d-block').addClass('d-none')
+    $(imgBtn).removeClass('d-block').addClass('d-none')
     values.forEach(el => {
         $(el).removeClass('d-block').addClass('d-none')
     })
     inputs.forEach(el => {
         $(el).removeClass('d-none').addClass('d-block')
     })
+    $(profileNameInput).removeClass('d-none').addClass('d-block')
     $(saveBtn).removeClass('d-none').addClass('d-block')
     return true
 }
@@ -57,7 +63,10 @@ function editProfile(el) {
 function saveProfile(el, data) {
     const values = el.parentNode.parentNode.querySelectorAll('.value')
     const inputs = el.parentNode.parentNode.querySelectorAll('input')
+    const profileNameInput = el.parentNode.parentNode.parentNode.querySelector('#profileName')
     const editBtn = el.parentNode.querySelector('.edit-profile')
+    const imgBtn = el.parentNode.querySelector('.edit-profile-img')
+    const profileName = el.parentNode.parentNode.parentNode.querySelector('.profile-name')
     $(el).removeClass('d-block').addClass('d-none')
     let i = 0
     values.forEach(el => {
@@ -65,9 +74,13 @@ function saveProfile(el, data) {
         el.querySelector('span').innerHTML = data[i]
         i++
     })
+    profileName.innerHTML = data['profileName']
     inputs.forEach(el => {
         $(el).removeClass('d-block').addClass('d-none')
     })
+    $(profileNameInput).removeClass('d-block').addClass('d-none')
+    $(profileName).removeClass('d-none').addClass('d-block')
+    $(imgBtn).removeClass('d-none').addClass('d-block')
     $(editBtn).removeClass('d-none').addClass('d-block')
     return true
 }
@@ -77,29 +90,36 @@ $(".edit-profile").on("click", function (el) {
     editProfile(btn)
 });
 
-$('.edit-profile-img').on('click', function (el) {
+function editImage() {
     const imageFormBox = $('.imageFormBox')
-    if (!imageFormBox.hasClass('animate__fadeInLeft')) {
-        imageFormBox.removeClass('animate__fadeOutRight').css({'display': 'block'}).addClass('animate__fadeInLeft')
-        console.log('ok')
+    if (!imageFormBox.hasClass('animate__bounceInLeft')) {
+        imageFormBox.removeClass('animate__bounceOutRight').css({'display': 'block'}).addClass('animate__bounceInLeft')
     } else {
-        imageFormBox.removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight')
+        imageFormBox.removeClass('animate__bounceInLeft').addClass('animate__bounceOutRight')
         setTimeout(function () {
             imageFormBox.css({'display': 'none'})
         }, 550)
     }
+}
+
+function fadeAddSuccess(text, color) {
+    const box = $('.add-success');
+    box[0].innerHTML = `<p style="color: ${color};">${text}</p>`
+    box.removeClass('animate__slideOutUp').css('display', 'block').addClass('animate__slideInDown');
+    setTimeout(function () {
+        box.removeClass('animate__slideInDown').addClass('animate__slideOutUp')
+        setTimeout(function () {
+            box.css('display', 'none')
+        }, 1200)
+    }, 5000)
+}
+
+$('.edit-profile-img').on('click', function (el) {
+    editImage()
 })
 
 $('.imageFormBox-close').on('click', function (el) {
-    const imageFormBox = $('.imageFormBox')
-    if (!imageFormBox.hasClass('animate__fadeInLeft')) {
-        imageFormBox.removeClass('animate__fadeOutRight').css({'display': 'block'}).addClass('animate__fadeInLeft')
-    } else {
-        imageFormBox.removeClass('animate__fadeInLeft').addClass('animate__fadeOutRight')
-        setTimeout(function () {
-            imageFormBox.css({'display': 'none'})
-        }, 550)
-    }
+    editImage()
 })
 
 $('.mobile-button-parameters').on('click', function(el) {
@@ -113,6 +133,7 @@ $('.mobile-button-parameters').on('click', function(el) {
 
 $(".save-profile").on("click", el => {
     const values = el.target.parentNode.parentNode.querySelectorAll('input')
+    const profileName = el.target.parentNode.parentNode.parentNode.querySelector('#profileName')
     const characters = {}
     let result = true
     values.forEach((el, i) => {
@@ -124,8 +145,9 @@ $(".save-profile").on("click", el => {
             }
         }
     })
+    characters['profileName'] = profileName.value
     if (result === false) {
-        alert('Недопустимые значения')
+        fadeAddSuccess('Некорректные значения', 'red')
     } else {
         $.ajax({
             type: 'POST',
@@ -139,6 +161,7 @@ $(".save-profile").on("click", el => {
             },
             success: function(data) {
                 saveProfile(el.target, characters)
+                fadeAddSuccess('Данные обновлены', '#009900')
             }
         })
         return false;
@@ -174,12 +197,52 @@ $(function(){
         $('html,body').stop().animate({ scrollTop: $('#mobileScrollPointResults').offset().top }, 1000);
         e.preventDefault();
     });
-    // $('.who-i-mobile').on('click', function(e){
-    //     $('html,body').stop().animate({ scrollTop: $('#mobileScrollPointWhoI').offset().top }, 1000);
-    //     e.preventDefault();
-    // });
-    // $('.results-mobile').on('click', function(e){
-    //     $('html,body').stop().animate({ scrollTop: $('#mPointResults').offset().top }, 1000);
-    //     e.preventDefault();
-    // });
 });
+
+$(function () {
+    $('#imageUpload').submit(function (e) {
+        e.preventDefault()
+        let file = document.querySelector('#imageSelect').value
+        const $form = $(this)
+        const formData = new FormData(this);
+        if (file) {
+            const image = document.querySelector('.profile .box-images img')
+            const imageMobile = document.querySelector('.mobile-profile-avatar img')
+            const imageNavbar = document.querySelector('.mobile-navbar-image img')
+            const label = document.querySelector('.js-labelFile')
+            const labelReset = '<i class="icon fa fa-check"></i>' +
+                '<span class="js-fileName"> Загрузить изображение</span>'
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                error: function(jqXHR, textStatus, err) {
+                    console.log('error: ' + err)
+                },
+                beforeSend: function() {
+                    console.log('loading')
+                },
+                success: function(data) {
+                    if ($(window).width() > 767) {
+                        image.src = data.img
+                    } else {
+                        imageMobile.src = data.img
+                        imageNavbar.src = data.img
+                    }
+                    editImage()
+                    e.target.reset()
+                    $(label).removeClass('has-file');
+                    label.innerHTML = labelReset;
+                    fadeAddSuccess('Изображение обновлено', '#009900')
+                }
+            })
+            return false;
+        } else {
+            fadeAddSuccess('Выберите изображение', 'red')
+            return false;
+        }
+    })
+})

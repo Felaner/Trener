@@ -36,8 +36,12 @@ router.get('/', auth, async (req, res) => {
 });
 
 router.post('/', auth, async (req, res) => {
+    const user = await User.findOne({where: {id: req.user.id}})
     const character = await Character.findOne({where: {userId: req.user.id}})
-    const {0: growth, 1: weight, 2: bust, 3: waist, 4: girth} = req.body
+    const {0: growth, 1: weight, 2: bust, 3: waist, 4: girth, profileName: name} = req.body
+    await user.update({
+        name
+    })
     if (!character) {
         await Character.create({
             growth, weight, bust, waist, girth,
@@ -62,20 +66,25 @@ router.post('/edit-image', auth, async (req, res) => {
                 sharp(el.buffer)
                     .rotate()
                     .toFile(dirname + `/${filename}`)
-                if (!character) {
-                    Character.create({
-                        image: `/images/avatars/${filename}`,
-                        userId: req.user.id
-                    }).then(el => {
-                        return res.redirect('/profile')
+                    .then(result => {
+                        if (!character) {
+                            Character.create({
+                                image: `/images/avatars/${filename}`,
+                                userId: req.user.id
+                            }).then(el => {
+                                return res.json({img: `/images/avatars/${filename}`})
+                            })
+                        } else {
+                            if (character.image) {
+                                fs.unlinkSync('public/' + character.image)
+                            }
+                            character.update({
+                                image: `/images/avatars/${filename}`
+                            }).then(el => {
+                                return res.json({img: `/images/avatars/${filename}`})
+                            })
+                        }
                     })
-                } else {
-                    character.update({
-                        image: `/images/avatars/${filename}`
-                    }).then(el => {
-                        return res.redirect('/profile')
-                    })
-                }
             })
         } else {
             alert('Вы не добавили изображение')

@@ -16,10 +16,6 @@ const user = sequelize.define('User', {
         allowNull: false,
         type: Sequelize.STRING
     },
-    secondName: {
-        allowNull: false,
-        type: Sequelize.STRING
-    },
     course: {
         allowNull: true,
         type: Sequelize.INTEGER

@@ -102,13 +102,20 @@ input[type=number]::-webkit-outer-spin-button {
 .mobile-description{
     text-indent: 3ch;
 }
-.parameter-wrapper input{
-    width: 90px;
+.parameter-wrapper input, #profileName{
     margin-bottom: 8px;
     padding-left: 14px;
     border: none;
     border-radius: 10px;
     font-weight: bold;
+}
+
+.parameter-wrapper input {
+    width: 90px;
+}
+
+#profileName {
+    width: 150px;
 }
 
 .btn-tertiary{
@@ -145,4 +152,23 @@ input[type=number]::-webkit-outer-spin-button {
 .input-file + .js-labelFile.has-file .icon:before{
     content:"\f00c";
     color:#5AAC7B;
+}
+
+.add-success {
+    position: relative;
+    display: none;
+    width: 300px;
+    height: 80px;
+    border-radius: 0 0 25px 25px;
+    border: 1px solid #005cbf;
+    background: white;
+    z-index: 1060;
+    top: 0;
+    right: calc(50% - 150px);
+}
+
+.add-success p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
 }

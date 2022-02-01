@@ -52,6 +52,9 @@
         box-shadow: none;
         text-decoration: none;
     }
+    nav .nav-link {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -76,10 +79,10 @@
         position: fixed;
     }
     .f-60{
-        font-size: 48px;
+        font-size: 38px;
     }
     .f-40{
-        font-size: 34px;
+        font-size: 28px;
     }
     .f-32{
         font-size: 22px;
@@ -101,6 +104,10 @@
     }
     #carousel2 .carousel-item {
         height: 450px;
+    }
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        width: 30px;
+        height: 30px;
     }
 }
 

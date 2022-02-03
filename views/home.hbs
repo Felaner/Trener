@@ -1,11 +1,13 @@
 <!--Главная-->
-<div class="container-fluid">
+<div class="container-fluid d-sm-block d-none">
     <div class="row">
         <div class="col-12 p-0">
             <div class="main-wrapper position-relative">
                 <img class="img-fluid" src="/images/main-img.jpg" alt="main-img">
-                <div class="img-title f-white text-center f-60 font-weight-bold">СДЕЛАЙ СВОЙ РЕЗУЛЬТАТ!</div>
-                <div class="img-subtitle f-white text-center f-40">Доступно, комфортно, быстро.</div>
+                <div class="description-wrapper">
+                    <div class="img-title f-white text-center f-60 font-weight-bold">СДЕЛАЙ СВОЙ РЕЗУЛЬТАТ!</div>
+                    <div class="img-subtitle f-white text-center f-40">Доступно, комфортно, быстро.</div>
+                </div>
             </div>
         </div>
     </div>
@@ -93,7 +95,7 @@
         <div class="col-12"><h2 class="text-center f-40 f-white mb-5">Почему онлайн?</h2></div>
         <div class="col-lg-4">
             <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
-                <div class="icon mt-3"><img src="/images/icons/time.svg" alt="time"></div>
+                <div class="reason-icon mt-3"><img src="/images/icons/time.svg" alt="time"></div>
                 <div class="reason-box-title f-28 mt-2 text-center">НЕТ ПРИВЯЗКИ КО ВРЕМЕНИ</div>
                 <div class="title-divider"></div>
                 <div class="reason-box-description text-center f-22 mt-4">Ты можешь сам определять дату и время тренировки, не быть привязанным ко времени и подстраиваться под график своих личный распорядок дня.</div>
@@ -102,7 +104,7 @@
 
         <div class="col-lg-4">
             <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
-                <div class="icon mt-3"><img src="/images/icons/place.svg" alt="place"></div>
+                <div class="reason-icon mt-3"><img src="/images/icons/place.svg" alt="place"></div>
                 <div class="reason-box-title f-28 mt-2 text-center">НЕТ ПРИВЯЗКИ К <br>МЕСТУ</div>
                 <div class="title-divider"></div>
                 <div class="reason-box-description text-center f-22 mt-4">Для тебя открыты любые удобные места для тренировок. Не нужно ехать через весь город и жертвовать своим временем.</div>
@@ -111,7 +113,7 @@
 
         <div class="col-lg-4">
             <div class="reason-box mx-lg-0 mx-sm-auto d-flex flex-column align-items-center p-2 mb-sm-3">
-                <div class="icon mt-3"><img src="/images/icons/home.svg" alt="home"></div>
+                <div class="reason-icon mt-3"><img src="/images/icons/home.svg" alt="home"></div>
                 <div class="reason-box-title f-28 mt-2 text-center">ТРЕНИРУЙСЯ <br>ДОМА</div>
                 <div class="title-divider"></div>
                 <div class="reason-box-description text-center f-22 mt-4">Стесняешься идти в зал? В твоё удобное время в фитнес центре не протолкнуться? Тренируйся дома в комфортной обстановке.</div>
@@ -310,35 +312,166 @@
 
 <!--Мобильная версия-->
 
+<div class="container-fluid d-block d-sm-none">
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="main-wrapper position-relative">
+                <img class="img-fluid" src="/images/mobile-main-img.jpg" alt="main-img">
+                <div class="description-wrapper">
+                    <div class="mobile-img-title f-white text-center f-20 font-weight-bold mb-3">СДЕЛАЙ СВОЙ РЕЗУЛЬТАТ!</div>
+                    <div class="mobile-img-subtitle f-white text-center f-16">Доступно, комфортно, быстро.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-sm-none d-block">
+    <div class="row mt-3 align-items-center">
+        <div class="mobile-divider mx-auto mb-3"></div>
+        <div class="col-12"><div class="f-white text-center font-weight-bold f-16 mb-3">Обо мне <a id="mobileScrollPointWhoI"></a></div></div>
+        <div class="col-6 mx-auto">
+            <div class="mobile-box mx-auto">
+                <img class="img-fluid" src="/images/trainer.jpg" alt="trainer">
+            </div>
+        </div>
+        <div class="col-12 mx-auto pl-3 pr-3 d-flex flex-column justify-content-between">
+            <div class="f-white text-center font-weight-bold f-18 mb-1 mt-2">Привет, меня зовут Кирилл!</div>
+            <div class="f-white text-center f-16 mb-1">Я персональный тренер, действующий спортсмен и спортивный блогер.
+                Моя специализация - это ваша отличная форма.</div>
+            <div class="f-white text-center f-16">
+                <div class="mb-3">В моем блоге вы получите:</div>
+                <p>- Информацию о тренировках и питание</p>
+                <p>- Ответы на самые часто задаваемые вопросы</p>
+                <p>- Разоблачение самых распространённых мифов</p>
+                <p>- Мощный заряд мотивации и энергии</p>
+            </div>
+            <div class="f-white text-center f-16 mb-1">Стаж собственных тренировок более 10 лет и последние 5 я посветит себя тренерской деятельности.
+                Сертифицированный тренер основывающийся не только на теорию но практику и собственный опыт.</div>
+            <a class="main-footer-link f-16 d-flex justify-content-center mt-2 mb-3" href="">
+                <img src="/images/icons/inst.svg" alt="" width="25px">@inst-name
+            </a>
+            {{#unless isAuth}}
+            <a href="/auth/login#register" class="mobile-button mx-auto mt-sm-4">Присоединиться</a>
+            {{/unless}}
+        </div>
+        <div class="mobile-divider mx-auto mt-3"></div>
+    </div>
+
+<!--    <div class="row mt-3">-->
+<!--        <div class="col-12">-->
+<!--            <div class="mobile-box-img">-->
+<!--                <img src="images/trainer.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-12 p-0 mt-3">-->
+<!--                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>-->
+<!--            </div>-->
+<!--            <div class="col-12 mt-2">-->
+<!--                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row mt-3">-->
+<!--        <div class="col-12">-->
+<!--            <div class="mobile-box-img-green">-->
+<!--                <img src="images/trainer.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-12 p-0 mt-3">-->
+<!--                <div class="f-white f-16 font-weight-bold mobile-box-title-green d-flex justify-content-center align-items-center">Lorem ipsum</div>-->
+<!--            </div>-->
+<!--            <div class="col-12 mt-2">-->
+<!--                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row mt-3">-->
+<!--        <div class="col-12">-->
+<!--            <div class="mobile-box-img">-->
+<!--                <img src="images/trainer.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-12 p-0 mt-3">-->
+<!--                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>-->
+<!--            </div>-->
+<!--            <div class="col-12 mt-2">-->
+<!--                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="row">
+        <div class="col-12"><h2 class="f-white f-16 text-center mt-3">Почему онлайн?</h2></div>
+    </div>
+    <div class="mt-3 horizontal-scroll">
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
+            <div class="icon mt-3"><img src="/images/icons/time.svg" alt="time"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">НЕТ ПРИВЯЗКИ КО ВРЕМЕНИ</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">Ты можешь сам определять дату и время тренировки, не быть привязанным ко времени и подстраиваться под график своих личный распорядок дня.</div>
+        </div>
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
+            <div class="icon mt-3"><img src="/images/icons/place.svg" alt="place"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">НЕТ ПРИВЯЗКИ К МЕСТУ</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">Для тебя открыты любые удобные места для тренировок. Не нужно ехать через весь город и жертвовать своим временем.</div>
+        </div>
+        <div class="mobile-reason-box d-flex flex-column align-items-center p-2">
+            <div class="icon mt-3"><img src="/images/icons/home.svg" alt="home"></div>
+            <div class="reason-box-title f-16 font-weight-bold mt-3">ТРЕНИРУЙСЯ ДОМА</div>
+            <div class="title-divider mt-2 mb-2"></div>
+            <div class="reason-box-description text-center f-18">Стесняешься идти в зал? В твоё удобное время в фитнес центре не протолкнуться? Тренируйся дома в комфортной обстановке.</div>
+        </div>
+    </div>
+<!--    <div class="row mt-3">-->
+<!--        <div class="col-12 text-center f-white f-16 font-weight-bold mb-2">Еще немного текста о пользе занятий</div>-->
+<!--        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>-->
+<!--        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>-->
+<!--        {{#unless isAuth}}-->
+<!--        <div class="col-12 d-flex justify-content-center"><a href="/auth/login#register" class="mobile-button mt-sm-4">Присоединиться</a></div>-->
+<!--        {{/unless}}-->
+<!--    </div>-->
+    <div class="mobile-divider mx-auto mt-3 mb-3"></div>
+</div>
+
 <div class="container-fluid mobile-carousel d-sm-none d-block">
     <div class="row">
+        <div class="col-12"><h2 class="f-white f-16 text-center">ПОЧЕМУ ИМЕННО СО МНОЙ ТЫ ПОЛУЧИШЬ РЕЗУЛЬТАТ?</h2></div>
         <div class="col-12 p-0">
             <div id="carouselMobileIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselMobileIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselMobileIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselMobileIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselMobileIndicators" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item mobile-carousel-item active">
-                        <img src="/images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <img src="/images/mobile-result-1.jpg" class="w-100 slider-img" alt="result">
                         <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
-                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
-                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
+                            <h5 class="f-18 text-left"> ВСЕ ДОСТУПНО И ПОНЯТНО</h5>
+                            <p class="f-14">Детальный разбор каждого движения с видео. Сложные вещи объясняю простым языком.</p>
                         </div>
                     </div>
                     <div class="carousel-item mobile-carousel-item">
-                        <img src="/images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <img src="/images/mobile-result-2.jpg" class="w-100 slider-img" alt="result">
                         <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
-                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
-                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
+                            <h5 class="f-18 text-left">РЕЗУЛЬТАТ НЕ ЗАСТАВИТ ЖДАТЬ</h5>
+                            <p class="f-14">Программы написано с методом периодизации и индивидуальными особенностями для ваших целей и задач</p>
                         </div>
                     </div>
                     <div class="carousel-item mobile-carousel-item">
-                        <img src="/images/slider-img.png" class="w-100 slider-img" alt="runner">
+                        <img src="/images/mobile-result-3.jpg" class="w-100 slider-img" alt="result">
                         <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
-                            <h5 class="f-18 text-left">ГЛАВНЫЙ ЗАГОЛОВОК</h5>
-                            <p class="f-14">ПОДЗАГОЛОВОК, КОТОРЫЙ БУДЕТ ТОЖЕ КРАСИВЫМ</p>
+                            <h5 class="f-18 text-left">ВСЕ В ОДНОМ МЕСТЕ</h5>
+                            <p class="f-14">Для тренировок тебе нужен только смартфон. Одна платформа и полное отсутствие переходов по ссылкам, поисков упражнений.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item mobile-carousel-item">
+                        <img src="/images/mobile-result-4.jpg" class="w-100 slider-img" alt="result">
+                        <div class="carousel-caption mobile-carousel-caption d-flex flex-column align-items-start">
+                            <h5 class="f-18 text-left">ТЫ ПОЙМЁШЬ</h5>
+                            <p class="f-14">Из чего складывается результат и как его удержать. Пояснения к движениям и тренировочным циклам.</p>
                         </div>
                     </div>
                 </div>
@@ -355,102 +488,7 @@
     </div>
 </div>
 
-<div class="container d-sm-none d-block">
-    <div class="row mt-3 align-items-center">
-        <div class="mobile-divider mx-auto mb-3"></div>
-        <div class="col-6 mx-auto">
-            <div class="mobile-box mx-auto">
-                <img class="img-fluid" src="/images/trainer.jpg" alt="trainer">
-            </div>
-        </div>
-        <div class="col-12 mx-auto pl-3 pr-3 d-flex flex-column justify-content-between">
-            <div class="f-white text-center font-weight-bold f-16 mb-1">Заголовок блока</div>
-            <div class="f-white text-center f-16 mb-1">sit amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare</div>
-            {{#unless isAuth}}
-            <a href="/auth/login#register" class="mobile-button mx-auto mt-sm-4">Присоединиться</a>
-            {{/unless}}
-        </div>
-        <div class="mobile-divider mx-auto mt-3"></div>
-    </div>
-
-    <div class="row mt-3">
-        <div class="col-12"><div class="f-white text-center font-weight-bold f-16 mb-3">Обо мне <a id="mobileScrollPointWhoI"></a></div></div>
-        <div class="col-12">
-            <div class="mobile-box-img">
-                <img src="images/trainer.jpg" alt="">
-            </div>
-            <div class="col-12 p-0 mt-3">
-                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>
-            </div>
-            <div class="col-12 mt-2">
-                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <div class="col-12">
-            <div class="mobile-box-img-green">
-                <img src="images/trainer.jpg" alt="">
-            </div>
-            <div class="col-12 p-0 mt-3">
-                <div class="f-white f-16 font-weight-bold mobile-box-title-green d-flex justify-content-center align-items-center">Lorem ipsum</div>
-            </div>
-            <div class="col-12 mt-2">
-                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <div class="col-12">
-            <div class="mobile-box-img">
-                <img src="images/trainer.jpg" alt="">
-            </div>
-            <div class="col-12 p-0 mt-3">
-                <div class="f-white f-16 font-weight-bold mobile-box-title d-flex justify-content-center align-items-center">Lorem ipsum</div>
-            </div>
-            <div class="col-12 mt-2">
-                <div class="text-left f-white f-14 mobile-box-description">pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mobile-divider mx-auto mt-3"></div>
-
-    <div class="row">
-        <div class="col-12"><h2 class="f-white f-16 text-center mt-3">Почему нужно заниматься</h2></div>
-    </div>
-    <div class="mt-3 horizontal-scroll">
-        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
-            <div class="icon mt-3"><img class="img-fluid" src="/images/icons/Reason-icon.svg" alt="icon"></div>
-            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 1</div>
-            <div class="title-divider mt-2 mb-2"></div>
-            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
-        </div>
-        <div class="mobile-reason-box d-flex flex-column align-items-center p-2 mr-3">
-            <div class="icon mt-3"><img class="img-fluid" src="/images/icons/Reason-icon.svg" alt="icon"></div>
-            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 2</div>
-            <div class="title-divider mt-2 mb-2"></div>
-            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
-        </div>
-        <div class="mobile-reason-box d-flex flex-column align-items-center p-2">
-            <div class="icon mt-3"><img class="img-fluid" src="images/icons/Reason-icon.svg" alt="icon"></div>
-            <div class="reason-box-title f-16 font-weight-bold mt-3">Причина 3</div>
-            <div class="title-divider mt-2 mb-2"></div>
-            <div class="reason-box-description text-center f-18">morbi tristique senectus et netus et malesuada fames ac turpis egestas integer eget aliquet nibh praesent tristique magna sit</div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 text-center f-white f-16 font-weight-bold mb-2">Еще немного текста о пользе занятий</div>
-        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
-        <div class="col-12 text-center f-white f-16 mb-2">in fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium</div>
-        {{#unless isAuth}}
-        <div class="col-12 d-flex justify-content-center"><a href="/auth/login#register" class="mobile-button mt-sm-4">Присоединиться</a></div>
-        {{/unless}}
-    </div>
-    <div class="mobile-divider mx-auto mt-3"></div>
-</div>
+<div class="mobile-divider mx-auto mt-3 mb-3 d-sm-none d-block"></div>
 
 <div class="parallax d-sm-none d-block">
     <div class="f-white f-18 text-center mt-3 pt-3 font-weight-bold position-relative"><img class="click-image" src="/images/icons/click.svg" alt="click">Результаты подсписчиков <a id="mobileScrollPointResults"></a></div>

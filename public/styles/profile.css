@@ -31,7 +31,7 @@ input[type=number]::-webkit-outer-spin-button {
     bottom: 0;
     right: 0;
     z-index: 100;
-    border-radius: 25px;
+    border-radius: .25rem;
 }
 
 .imageFormBox-close{
@@ -50,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
 .profile-status{
     background: #005cbf;
     width: 100%;
-    border-radius: 10px;
+    border-radius: .25rem;
     padding: 20px;
 }
 
@@ -94,7 +94,7 @@ input[type=number]::-webkit-outer-spin-button {
 .mobile-button-parameters{
     width: 120px;
     height: 25px;
-    border-radius: 20px;
+    border-radius: .25rem;
     border: none;
     background: #333D48;
     box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.28);
@@ -106,7 +106,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 8px;
     padding-left: 14px;
     border: none;
-    border-radius: 10px;
+    border-radius: .25rem;
     font-weight: bold;
 }
 
@@ -159,7 +159,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
     width: 300px;
     height: 80px;
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 .25rem .25rem;
     border: 1px solid #005cbf;
     background: white;
     z-index: 1060;

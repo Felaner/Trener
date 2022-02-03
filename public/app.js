@@ -21,7 +21,7 @@ $(".mobile-result-box").on("click", function () {
     if (!after.hasClass('animation-down')) {
         after.removeClass('animation-top').addClass('animation-down')
         setTimeout(function () {
-            after.css('z-index', '2').css({'background': 'url("../images/trainer.png") no-repeat', 'background-size': 'contain'})
+            after.css('z-index', '2').css({'background': 'url("../images/trainer.jpg") no-repeat', 'background-size': 'contain'})
         }, 1000)
         before.removeClass('animation-down').addClass('animation-top')
         setTimeout(function () {
@@ -30,7 +30,7 @@ $(".mobile-result-box").on("click", function () {
     } else {
         before.removeClass('animation-top').addClass('animation-down')
         setTimeout(function () {
-            before.css('z-index', '2').css({'background': 'url("../images/trainer.png") no-repeat', 'background-size': 'contain'})
+            before.css('z-index', '2').css({'background': 'url("../images/trainer.jpg") no-repeat', 'background-size': 'contain'})
         }, 1000)
         after.removeClass('animation-down').addClass('animation-top')
         setTimeout(function () {

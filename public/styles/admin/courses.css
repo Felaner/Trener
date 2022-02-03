@@ -1,0 +1,30 @@
+.add-course-tab {
+    height: auto;
+    max-height: 60px;
+    overflow: hidden;
+    border: 2px solid #0653B6;
+    border-radius: .25rem;
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+}
+
+.add-course-tab-href {
+    cursor: pointer;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.add-course-tab-href:hover {
+    text-decoration: unset;
+    color: white;
+}
+
+.add-course-tab.open {
+    max-height: 3000px;
+    transition: max-height 1s ease-in-out;
+}
+
+#courseDescription {
+    min-height: 210px;
+}

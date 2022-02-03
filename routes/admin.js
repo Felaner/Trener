@@ -62,7 +62,7 @@ router.get('/courses', admin, async(req, res) => {
                     id: req.user.id
                 }
             }).then(user => {
-                res.render('admin/users', {
+                res.render('admin/courses', {
                     title: 'Пользователи',
                     isAdmin: true,
                     user,
@@ -70,6 +70,27 @@ router.get('/courses', admin, async(req, res) => {
                 });
             })
     })
+});
+
+router.post('/courses/add-course', admin, async(req, res) => {
+    await Course.findAll()
+        .then(courses => {
+            User.findOne({
+                include: {
+                    model: Character
+                },
+                where: {
+                    id: req.user.id
+                }
+            }).then(user => {
+                res.render('admin/courses', {
+                    title: 'Пользователи',
+                    isAdmin: true,
+                    user,
+                    courses
+                });
+            })
+        })
 });
 
 module.exports = router;

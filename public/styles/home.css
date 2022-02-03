@@ -83,6 +83,10 @@
     background: #ffffff;
 }
 
+.icon{
+    width: 60px;
+}
+
 .title-divider{
     width: 70%;
     height: 5px;

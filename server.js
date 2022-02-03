@@ -77,7 +77,8 @@ app.use(session({
 }));
 
 app.use(fileMiddleware.fields([
-    { name: 'imageSelect', maxCount: 2 }
+    { name: 'imageSelect', maxCount: 2 },
+    { name: 'imageCourse', maxCount: 2 }
 ]));
 
 app.use(userMiddleware);

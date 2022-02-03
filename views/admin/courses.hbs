@@ -1,5 +1,5 @@
-<div class="container mt-3 min-vh-100">
-    <div class="row">
+<div class="container min-vh-100 pt-5">
+    <div class="row pt-5 admin-courses">
         <div class="col-12">
             <div class="row mb-3" id="tab1">
                 <div class="col-md-10 offset-md-1 col-12 add-course-tab">
@@ -21,7 +21,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="courseDuration">Длительность (кол-во дней)</label>
-                                            <input type="number" name="courseName" id="courseName" class="form-control" placeholder="Длительность курса">
+                                            <input type="number" name="courseDuration" id="courseDuration" class="form-control" placeholder="Длительность курса">
                                         </div>
                                         <div class="form-group">
                                             <label for="coursePrice">Стоимость</label>
@@ -35,8 +35,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-6 offset-3 d-flex justify-content-center">
-                                        <input type="file" name="imageSelect" id="imageSelect" class="input-file">
-                                        <label for="imageSelect" class="btn btn-tertiary js-labelFile w-75">
+                                        <input type="file" name="imageCourse" id="imageCourse" class="input-file">
+                                        <label for="imageCourse" class="btn btn-tertiary js-labelFile w-75">
                                             <i class="icon fa fa-check"></i>
                                             <span class="js-fileName">Загрузить изображение</span>
                                         </label>
@@ -55,15 +55,17 @@
         </div>
         {{#if courses}}
             {{#each courses}}
-                <div class="col-3">
-                    <img src="{{img}}" alt="course-img">
+                <div class="col-3 mb-3">
+                    <div class="box-images">
+                        <img src="{{img}}" alt="course-img">
+                    </div>
                 </div>
-                <div class="col-6">
+                <div class="col-5 offset-1">
                     <div class="row">
                         <h3 class="f-white">{{name}}</h3>
                     </div>
                     <div class="row">
-                        <p class="f-white">{{duration}}</p>
+                        <p class="f-white">Длительность: {{duration}} дней</p>
                     </div>
                     <div class="row">
                         <p class="f-white">{{description}}</p>
@@ -79,4 +81,8 @@
             </div>
         {{/if}}
     </div>
+</div>
+
+<div class="add-success position-fixed animate__animated">
+
 </div>

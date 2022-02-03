@@ -1,29 +1,26 @@
 <!--Навбар-->
 
 <nav class="navbar navbar-dark navbar-expand-md d-md-flex justify-content-center d-none">
-    <div class="pb-3 pt-3">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Переключатель навигации">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav d-flex justify-content-between">
-                    <a class="nav-link mr-2" href="/">Главная</a>
-                    <a class="nav-link mr-2 who-i-href" href="/#scrollPointWhoI">Кто я?</a>
-                    <a class="nav-link mr-2 results-href" href="/#scrollPointResults">Результаты клиентов</a>
-                    {{#unless isAuth}}
-                        <a class="nav-link" href="/auth/login#login">Авторизация</a>
-                    {{/unless}}
-                    {{#if isAuth}}
-                        {{#unless isProfile}}
-                        <a class="nav-link mr-2" href="/profile">Личный кабинет</a>
-                        {{/unless}}
-                        <a class="nav-link" href="/auth/logout">Выйти</a>
-                        {{#if user.isAdmin}}
-                            <a class="nav-link mr-2" href="/admin">Панель управления</a>
-                        {{/if}}
-                    {{/if}}
-                </div>
-            </div>
+    <div class="justify-content-center pt-2 pb-2">
+        <div class="navbar-nav d-flex justify-content-between">
+            <a class="nav-link mr-2" href="/">Главная</a>
+            <a class="nav-link mr-2 who-i-href" href="/#scrollPointWhoI">Кто я?</a>
+            <a class="nav-link mr-2 results-href" href="/#scrollPointResults">Результаты клиентов</a>
+            {{#unless isAuth}}
+                {{#unless isLogin}}
+                    <a class="nav-link" href="/auth/login#login">Войти</a>
+                {{/unless}}
+            {{/unless}}
+            {{#if isAuth}}
+                {{#unless isProfile}}
+                <a class="nav-link mr-2" href="/profile">Личный кабинет</a>
+                {{/unless}}
+                {{#if user.isAdmin}}
+                    <a class="nav-link mr-2" href="/admin">Управление</a>
+                {{/if}}
+                <a class="nav-link" href="/auth/logout">Выйти</a>
+            {{/if}}
+        </div>
     </div>
 </nav>
 

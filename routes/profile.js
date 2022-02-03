@@ -8,7 +8,6 @@ const sharp = require('sharp');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { user: User, character: Character } = require('../models/user');
-const Courses = require('../models/course');
 
 router.get('/', auth, async (req, res) => {
     const user = await User.findOne({
@@ -19,19 +18,10 @@ router.get('/', auth, async (req, res) => {
             id: req.user.id
         }
     })
-    const course = await Courses.findOne({
-        where: {id: user.course},
-        attributes: [
-            'name',
-            'description',
-            'duration'
-        ]
-    })
     res.render('profile', {
         title: 'Личный кабинет',
         isProfile: true,
-        user,
-        course
+        user
     });
 });
 

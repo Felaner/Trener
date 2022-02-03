@@ -1,0 +1,59 @@
+<div class="container mt-3 vh-100">
+    <div class="row">
+        {{#if users}}
+            {{#each users}}
+                <div class="col-12 mb-3">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="box-images">
+                                <img src="{{#if Character.image}}{{Character.image}}{{else}}/images/icons/PCperson.svg{{/if}}" alt="avatar">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="f-white">{{name}}</h3>
+                            <p class="f-white"><a href="mailto:{{email}}">{{email}}</a></p>
+                        </div>
+                        <div class="col-6">
+                            <div class="parameter-wrapper d-flex justify-content-between">
+                                <div class="parameter f-white f-20">Рост</div>
+                                <div class="value f-white f-20">
+                                    <span class="value-digit">{{#if Character.growth}}{{Character.growth}}{{else}}--{{/if}}</span> см
+                                </div>
+                            </div>
+                            <div class="divider mb-3"></div>
+                            <div class="parameter-wrapper d-flex justify-content-between">
+                                <div class="parameter f-white f-20">Вес</div>
+                                <div class="value f-white f-20">
+                                    <span class="value-digit">{{#if Character.weight}}{{Character.weight}}{{else}}--{{/if}}</span> см
+                                </div>
+                            </div>
+                            <div class="divider mb-3"></div>
+                            <div class="parameter-wrapper d-flex justify-content-between">
+                                <div class="parameter f-white f-20">Обхват груди</div>
+                                <div class="value f-white f-20">
+                                    <span class="value-digit">{{#if Character.bust}}{{Character.bust}}{{else}}--{{/if}}</span> см
+                                </div>
+                            </div>
+                            <div class="divider mb-3"></div>
+                            <div class="parameter-wrapper d-flex justify-content-between">
+                                <div class="parameter f-white f-20">Обхват талии</div>
+                                <div class="value f-white f-20">
+                                    <span class="value-digit">{{#if Character.waist}}{{Character.waist}}{{else}}--{{/if}}</span> см
+                                </div>
+                            </div>
+                            <div class="divider mb-3"></div>
+                            <div class="parameter-wrapper d-flex justify-content-between">
+                                <div class="parameter f-white f-20">Обхват бедер</div>
+                                <div class="value f-white f-20">
+                                    <span class="value-digit">{{#if Character.girth}}{{Character.girth}}{{else}}--{{/if}}</span> см
+                                </div>
+                            </div>
+                            <div class="divider mb-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider mb-3"></div>
+            {{/each}}
+        {{/if}}
+    </div>
+</div>

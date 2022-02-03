@@ -16,13 +16,14 @@ const user = sequelize.define('User', {
         allowNull: false,
         type: Sequelize.STRING
     },
-    course: {
-        allowNull: true,
-        type: Sequelize.INTEGER
-    },
     password: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    courseId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        foreignKey : true
     },
     resetToken: {
         type: Sequelize.STRING
@@ -74,4 +75,58 @@ const character = sequelize.define('Character', {
 
 user.hasOne(character, {foreignKey : 'userId'});
 
-module.exports = { user, character }
+const course = sequelize.define('Course', {
+    id: {
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    name: {
+        allowNull: false,
+        type: Sequelize.STRING
+    },
+    description: {
+        allowNull: false,
+        type: Sequelize.TEXT
+    },
+    price: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    duration: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    img: {
+        type: Sequelize.STRING
+    }
+})
+
+course.hasOne(user, {foreignKey : 'courseId'});
+
+const video = sequelize.define('Video', {
+    id: {
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        type: Sequelize.INTEGER
+    },
+    url: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    img: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    courseId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey : true
+    }
+})
+
+course.hasMany(video, {foreignKey: 'courseId'})
+
+module.exports = { user, character, course, video }

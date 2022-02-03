@@ -1,0 +1,19 @@
+.control a:hover {
+    text-decoration: unset;
+}
+
+.control .control-box {
+    height: 300px;
+    width: 100%;
+    border: 4px solid #0653B6;
+}
+
+.control .control-box .control-box-img {
+    width: 100%;
+    height: 80%;
+}
+
+.control .control-box-img img {
+    width: 100%;
+    height: 100%;
+}

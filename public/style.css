@@ -7,6 +7,9 @@
 @import url('styles/footer.css');
 @import url('styles/profile.css');
 @import url('styles/auth.css');
+@import url('styles/admin/control.css');
+@import url('styles/admin/users.css');
+@import url('styles/admin/courses.css');
 @import url('parallax.css');
 @import url('styles/media.css');
 

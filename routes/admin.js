@@ -116,13 +116,22 @@ router.post('/courses/add-course', admin, async(req, res) => {
 router.post('/courses/delete-course', admin, async(req, res) => {
     try {
         const {id} = req.body
-        Course.destroy({
-            where: {
-                id: id
-            }
-        }).then(el => {
-            return res.sendStatus(200)
-        })
+        await Course.findByPk(id)
+            .then(result => {
+                fs.stat('public/' + result.img, function(err, stat) {
+                    if(err == null) {
+                        fs.unlinkSync('public/' + result.img)
+                    }
+                });
+            }).then(e => {
+                Course.destroy({
+                    where: {
+                        id: id
+                    }
+                })
+            }).then(el => {
+                return res.sendStatus(200)
+            })
     } catch (e) {
         console.log(e)
     }

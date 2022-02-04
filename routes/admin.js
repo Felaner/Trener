@@ -66,7 +66,7 @@ router.get('/courses', admin, async(req, res) => {
                 }
             }).then(user => {
                 res.render('admin/courses', {
-                    title: 'Пользователи',
+                    title: 'Курсы',
                     isAdmin: true,
                     user,
                     courses
@@ -95,6 +95,7 @@ router.post('/courses/add-course', admin, async(req, res) => {
                             img: `/images/courses/${filename}`
                         }).then(el => {
                             return res.json({
+                                id: el.id,
                                 courseName,
                                 courseDescription,
                                 coursePrice,
@@ -105,9 +106,23 @@ router.post('/courses/add-course', admin, async(req, res) => {
                     })
             })
         } else {
-            alert('Вы не добавили изображение')
-            return false
+            return res.sendStatus(400)
         }
+    } catch (e) {
+        console.log(e)
+    }
+});
+
+router.post('/courses/delete-course', admin, async(req, res) => {
+    try {
+        const {id} = req.body
+        Course.destroy({
+            where: {
+                id: id
+            }
+        }).then(el => {
+            return res.sendStatus(200)
+        })
     } catch (e) {
         console.log(e)
     }

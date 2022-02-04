@@ -1,10 +1,10 @@
 <div class="container min-vh-100 pt-5">
-    <div class="row pt-5 admin-courses">
+    <div class="row pt-5">
         <div class="col-12">
             <div class="row mb-3" id="tab1">
                 <div class="col-md-10 offset-md-1 col-12 add-course-tab">
                     <div class="row">
-                        <a class="col-9 add-course-tab-href">
+                        <a class="col-12 add-course-tab-href">
                             <div class="row h-100">
                                 <div class="col d-flex align-items-center">
                                     <div class="add-course-name">Добавить курс</div>
@@ -17,21 +17,21 @@
                                     <div class="form-group col-6">
                                         <div class="form-group">
                                             <label for="courseName">Название</label>
-                                            <input type="text" name="courseName" id="courseName" class="form-control" placeholder="Название курса">
+                                            <input type="text" name="courseName" id="courseName" class="form-control" placeholder="Название курса" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="courseDuration">Длительность (кол-во дней)</label>
-                                            <input type="number" name="courseDuration" id="courseDuration" class="form-control" placeholder="Длительность курса">
+                                            <input type="number" name="courseDuration" id="courseDuration" class="form-control" placeholder="Длительность курса" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="coursePrice">Стоимость</label>
-                                            <input type="number" name="coursePrice" id="coursePrice" class="form-control" placeholder="Стоимость курса">
+                                            <input type="number" name="coursePrice" id="coursePrice" class="form-control" placeholder="Стоимость курса" required>
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
                                         <div class="form-group">
                                             <label for="courseDescription">Описание</label>
-                                            <textarea name="courseDescription" id="courseDescription" rows="7" class="form-control" placeholder="Описание курса"></textarea>
+                                            <textarea name="courseDescription" id="courseDescription" rows="7" class="form-control" placeholder="Описание курса" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-6 offset-3 d-flex justify-content-center">
@@ -53,33 +53,40 @@
                 </div>
             </div>
         </div>
-        {{#if courses}}
-            {{#each courses}}
-                <div class="col-3 mb-3">
-                    <div class="box-images">
-                        <img src="{{img}}" alt="course-img">
+        <div class="admin-courses row w-100">
+            {{#if courses}}
+                {{#each courses}}
+                    <div class="admin-course-box col-12">
+                        <div class="row">
+                            <div class="col-3 mb-3">
+                                <div class="box-images row justify-content-start">
+                                    <img src="{{img}}" alt="course-img">
+                                </div>
+                            </div>
+                            <div class="col-5 offset-1">
+                                <div class="row">
+                                    <h3 class="f-white">{{name}}</h3>
+                                </div>
+                                <div class="row">
+                                    <p class="f-white">Длительность: {{duration}} дней</p>
+                                </div>
+                                <div class="row">
+                                    <p class="f-white">{{description}}</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="row justify-content-end">
+                                    <p class="f-white">{{price}} руб.</p>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <button class="button-admin admin-course-delete" data-course-id="{{id}}">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-5 offset-1">
-                    <div class="row">
-                        <h3 class="f-white">{{name}}</h3>
-                    </div>
-                    <div class="row">
-                        <p class="f-white">Длительность: {{duration}} дней</p>
-                    </div>
-                    <div class="row">
-                        <p class="f-white">{{description}}</p>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <p class="f-white">{{price}} руб.</p>
-                </div>
-            {{/each}}
-        {{else}}
-            <div class="col-12">
-                <h3 class="text-center f-white">Курсов нет</h3>
-            </div>
-        {{/if}}
+                {{/each}}
+            {{/if}}
+        </div>
     </div>
 </div>
 

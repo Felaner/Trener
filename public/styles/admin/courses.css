@@ -28,3 +28,7 @@
 #courseDescription {
     min-height: 210px;
 }
+
+.admin-courses .box-images {
+    left: unset;
+}

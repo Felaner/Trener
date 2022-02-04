@@ -172,18 +172,12 @@ footer{
 /*Мобильная версия*/
 
 .mobile-carousel-caption{
-    z-index: 5;
-    position: absolute;
-    left: 30px;
-    top: 50%;
 }
 .mobile-carousel-caption h5{
     font-weight: bold;
-    width: 120px;
 }
 .mobile-carousel-caption p{
     font-weight: bold;
-    width: 200px;
 }
 .mobile-carousel-item{
     height: 460px;
@@ -444,7 +438,7 @@ a.mobile-button {
 }
 
 .card:hover .imgBx{
-    top: 0%;
+    top: 30%;
     transform: translateY(0%);
 
 }
@@ -455,6 +449,10 @@ a.mobile-button {
     left: 50%;
     transform: translate(-50%, -50%) rotate(-25deg);
     width: 270px;
+}
+.card .imgBx h2{
+    color: #ffffff;
+    text-align: center;
 }
 
 .card .contentBx{

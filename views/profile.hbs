@@ -1,5 +1,5 @@
-<div class="container profile min-vh-100 pt-5">
-    <div class="row d-sm-flex d-none">
+<div class="container profile min-vh-100 pt-5 d-sm-flex d-none">
+    <div class="row">
         <div class="col-12 f-white text-center f-32 font-weight-bold mt-5 mb-5">Личный кабинет</div>
         <div class="col-xl-4 col-lg-5 col-12 mb-lg-0 mb-3">
             <div class="box mx-sm-auto mb-sm-3">
@@ -125,7 +125,7 @@
 {{/if}}
 
 <!--Мобильная версия-->
-<div class="container d-sm-none d-block">
+<div class="container d-sm-none d-block min-vh-100">
     <div class="row">
         <div class="col-12 f-white text-center f-18 font-weight-bold mt-5">Личный кабинет</div>
         <div class="col-12 d-flex justify-content-center mobile-profile-avatar mt-3"><img class="img-fluid" src="{{#if user.Character.image}}{{user.Character.image}}{{else}}/images/icons/personcircle.svg{{/if}}" alt="avatar"></div>
